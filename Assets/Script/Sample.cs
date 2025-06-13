@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class Sample
 {
- // ‚±‚ß‚ñ‚Æ 
+ // ‚±‚ß‚ñ‚Æ ƒeƒXƒg
 }
