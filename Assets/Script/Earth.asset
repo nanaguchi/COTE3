@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: Earth
+  m_EditorClassIdentifier: 
+  planetName: "\u5730\u7403"
+  brief_info: "\u3042\u306A\u305F\u306E\u5BB6\u3002\u79C1\u305F\u3061\u306E\u4F7F\u547D\u3002"
+  detailed_info: 
+  mass: 5.97e+24
+  radius: 6378
+  rotation_speed: 23.9
+  revolution_speed: 8764.8
+  orebit_radius: 149.6
+  initial_position_x: 149.6
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 9.8
+  temperature: 15
+  scale: 1.2756
