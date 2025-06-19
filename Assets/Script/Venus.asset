@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: Venus
+  m_EditorClassIdentifier: 
+  planetName: "\u91D1\u661F"
+  brief_info: "\u91D1\u661F\u306F\u592A\u967D\u304B\u30892\u756A\u76EE\u3001\u305D\u3057\u30666\u756A\u76EE\u306B\u5927\u304D\u3044\u60D1\u661F\u3067\u3059\u3002\u592A\u967D\u7CFB\u3067\u6700\u3082\u71B1\u3044\u60D1\u661F\u3067\u3059\u3002"
+  detailed_info: 
+  mass: 4.87e+24
+  radius: 6052
+  rotation_speed: 5832
+  revolution_speed: 5392.8
+  orebit_radius: 108.2
+  initial_position_x: 108.2
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 8.9
+  temperature: 464
+  scale: 1.2104

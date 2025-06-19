@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: Saturn
+  m_EditorClassIdentifier: 
+  planetName: "\u571F\u661F"
+  brief_info: "\u571F\u661F\u306F\u592A\u967D\u304B\u30896\u756A\u76EE\u306E\u60D1\u661F\u3067\u3001\u592A\u967D\u7CFB\u30672\u756A\u76EE\u306B\u5927\u304D\u3044\u60D1\u661F\u3067\u3059\u3002\u7F8E\u3057\u3044\u74B0\u306B\u56F2\u307E\u308C\u3066\u3044\u307E\u3059\u3002"
+  detailed_info: 
+  mass: 5.68e+26
+  radius: 60268
+  rotation_speed: 10.7
+  revolution_speed: 257928
+  orebit_radius: 1432
+  initial_position_x: 1432
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 9
+  temperature: -140
+  scale: 12.536

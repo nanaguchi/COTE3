@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: Jupiter
+  m_EditorClassIdentifier: 
+  planetName: "\u6728\u661F"
+  brief_info: "\u6728\u661F\u306F\u592A\u967D\u304B\u30895\u756A\u76EE\u306E\u60D1\u661F\u3067\u3042\u308A\u3001\u592A\u967D\u7CFB\u3067\u6700\u5927\u306E\u60D1\u661F\u3067\u3059\u3002\u305D\u306E\u8CEA\u91CF\u306F\u4ED6\u306E\u60D1\u661F\u306E\u5408\u8A08\u306E2\u500D\u4EE5\u4E0A\u3067\u3059\u3002"
+  detailed_info: 
+  mass: 1.9e+27
+  radius: 71492
+  rotation_speed: 9.9
+  revolution_speed: 103982.4
+  orebit_radius: 778.5
+  initial_position_x: 778.5
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 23.1
+  temperature: -110
+  scale: 14.2984

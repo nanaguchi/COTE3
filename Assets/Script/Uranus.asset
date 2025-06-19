@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: Uranus
+  m_EditorClassIdentifier: 
+  planetName: "\u5929\u738B\u661F"
+  brief_info: "\u5929\u738B\u661F\u306F\u592A\u967D\u304B\u30897\u756A\u76EE\u306E\u60D1\u661F\u3067\u3042\u308A\u3001\u592A\u967D\u7CFB\u30673\u756A\u76EE\u306B\u5927\u304D\u3044\u60D1\u661F\u3067\u3059\u3002\u6A2A\u5411\u304D\u306B\u81EA\u8EE2\u3057\u3066\u3044\u308B\u3088\u3046\u306B\u898B\u3048\u307E\u3059\u3002"
+  detailed_info: 
+  mass: 8.68e+25
+  radius: 25559
+  rotation_speed: 17.2
+  revolution_speed: 734136
+  orebit_radius: 2867
+  initial_position_x: 2871
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 8.7
+  temperature: -195
+  scale: 5.1118

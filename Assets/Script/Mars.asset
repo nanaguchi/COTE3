@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: Mars
+  m_EditorClassIdentifier: 
+  planetName: "\u706B\u661F"
+  brief_info: "\u706B\u661F\u306F\u592A\u967D\u304B\u30894\u756A\u76EE\u30017\u756A\u76EE\u306B\u5927\u304D\u3044\u60D1\u661F\u3067\u3059\u3002\u79C1\u305F\u3061\u304C\u77E5\u308B\u9650\u308A\u3001\u30ED\u30DC\u30C3\u30C8\u3060\u3051\u304C\u4F4F\u3080\u552F\u4E00\u306E\u60D1\u661F\u3067\u3059\u3002"
+  detailed_info: 
+  mass: 6.42e+23
+  radius: 3396
+  rotation_speed: 24.6
+  revolution_speed: 16488
+  orebit_radius: 228
+  initial_position_x: 227.9
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 3.7
+  temperature: -65
+  scale: 0.6792
