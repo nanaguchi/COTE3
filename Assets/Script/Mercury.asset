@@ -18,7 +18,11 @@ MonoBehaviour:
   mass: 3.3e+23
   radius: 2439.5
   rotation_speed: 1406.4
+<<<<<<< HEAD
   revolution_speed: 2111.28
+=======
+  revolution_speed: 87.97
+>>>>>>> 17e7db11f2901a2e238a26e2b9d57bfe00eeb985
   orebit_radius: 57.9
   initial_position_x: 57.9
   initial_position_y: 0
