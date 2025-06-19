@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
   m_Name: Mercury
   m_EditorClassIdentifier: 
-  planetName: 
-  brief_info: 
+  planetName: "\u6C34\u661F"
+  brief_info: "\u6C34\u661F\u306F\u592A\u967D\u306B\u6700\u3082\u8FD1\u3044\u60D1\u661F\u3067\u3042\u308A\u3001\u592A\u967D\u7CFB\u3067\u6700\u3082\u5C0F\u3055\u3044\u60D1\u661F\u3067\u3059\u3002\u5730\u7403\u306E\u6708\u3088\u308A\u308F\u305A\u304B\u306B\u5927\u304D\u3044\u3060\u3051\u3067\u3059\u3002"
   detailed_info: 
-  mass: 0
-  radius: 0
-  rotation_speed: 0
-  revolution_speed: 0
-  orebit_radius: 0
-  initial_position_x: 0
+  mass: 3.3e+23
+  radius: 2439.5
+  rotation_speed: 1406.4
+  revolution_speed: 87.97
+  orebit_radius: 57.9
+  initial_position_x: 57.9
   initial_position_y: 0
   initial_position_z: 0
-  gravity: 0
-  temperature: 0
-  scale: 0
+  gravity: 3.7
+  temperature: 167
+  scale: 0.4879
