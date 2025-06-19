@@ -15,7 +15,6 @@ MonoBehaviour:
   planetName: "\u91D1\u661F"
   brief_info: "\u91D1\u661F\u306F\u592A\u967D\u304B\u30892\u756A\u76EE\u3001\u305D\u3057\u30666\u756A\u76EE\u306B\u5927\u304D\u3044\u60D1\u661F\u3067\u3059\u3002\u592A\u967D\u7CFB\u3067\u6700\u3082\u71B1\u3044\u60D1\u661F\u3067\u3059\u3002"
   detailed_info: 
-<<<<<<< HEAD
   mass: 4.87e+24
   radius: 6052
   rotation_speed: 5832
@@ -27,16 +26,3 @@ MonoBehaviour:
   gravity: 8.9
   temperature: 464
   scale: 1.2104
-=======
-  mass: 4.87e+10
-  radius: 6052
-  rotation_speed: 0
-  revolution_speed: 0
-  orebit_radius: 0
-  initial_position_x: 0
-  initial_position_y: 0
-  initial_position_z: 0
-  gravity: 0
-  temperature: 0
-  scale: 0
->>>>>>> 17e7db11f2901a2e238a26e2b9d57bfe00eeb985
