@@ -19,7 +19,7 @@ MonoBehaviour:
   radius: 1737.5
   rotation_speed: 655.2
   revolution_speed: 655.68
-  orebit_radius: 0.384
+  orebit_radius: 4.84
   initial_position_x: 149.98
   initial_position_y: 0
   initial_position_z: 0
