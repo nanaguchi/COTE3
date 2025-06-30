@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 77405044}
   - component: {fileID: 77405046}
   - component: {fileID: 77405045}
+  - component: {fileID: 77405048}
+  - component: {fileID: 77405047}
   m_Layer: 6
   m_Name: Neptune
   m_TagString: Untagged
@@ -366,6 +368,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &77405047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77405039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &77405048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77405039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &83991367
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +557,8 @@ GameObject:
   - component: {fileID: 84976010}
   - component: {fileID: 84976012}
   - component: {fileID: 84976011}
+  - component: {fileID: 84976014}
+  - component: {fileID: 84976013}
   m_Layer: 6
   m_Name: Earth
   m_TagString: Untagged
@@ -749,6 +791,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &84976013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84976005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &84976014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84976005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &321943780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1133,8 @@ GameObject:
   - component: {fileID: 569805974}
   - component: {fileID: 569805973}
   - component: {fileID: 569805977}
+  - component: {fileID: 569805979}
+  - component: {fileID: 569805978}
   m_Layer: 6
   m_Name: Sun
   m_TagString: Untagged
@@ -1163,6 +1245,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d29e587e85de65f40903f7b64fc5f79f, type: 2}
   orbitCenter: {fileID: 569805976}
+--- !u!114 &569805978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569805972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &569805979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569805972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: "\u592A\u967D\u306F\u592A\u967D\u7CFB\u306E\u4E2D\u5FC3\u306B\u4F4D\u7F6E\u3059\u308B\u6052\u661F\u3067\u3059\u3002\u305D\u306E\u91CD\u529B\u306F\u592A\u967D\u7CFB\u5168\u4F53\u3092\u4E00\u3064\u306B\u307E\u3068\u3081\u3001\u6700\u5927\u306E\u60D1\u661F\u304B\u3089\u6700\u5C0F\u306E\u7834\u7247\u306B\u81F3\u308B\u307E\u3067\u3001\u3042\u3089\u3086\u308B\u3082\u306E\u3092\u8ECC\u9053\u4E0A\u306B\u4FDD\u3063\u3066\u3044\u307E\u3059\u3002"
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &596793699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
@@ -1304,6 +1424,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &596793709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596793699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &596793710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596793699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &632421880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1552,8 @@ GameObject:
   - component: {fileID: 650089231}
   - component: {fileID: 650089233}
   - component: {fileID: 650089232}
+  - component: {fileID: 650089235}
+  - component: {fileID: 650089234}
   m_Layer: 6
   m_Name: Mars
   m_TagString: Untagged
@@ -1626,6 +1786,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &650089234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650089226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &650089235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650089226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &673170192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1935,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690258163}
   m_CullTransparentMesh: 1
+--- !u!1 &715275907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715275909}
+  - component: {fileID: 715275908}
+  m_Layer: 0
+  m_Name: TooltipManagerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &715275908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715275907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b1a72a2b8b2ba47b7b374aad1bf275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipPanel: {fileID: 1828991377}
+  titleText: {fileID: 2138909446}
+  descriptionText: {fileID: 2029464611}
+--- !u!4 &715275909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715275907}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 919.21875, y: 220.53125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772665047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +2079,7 @@ RectTransform:
   - {fileID: 902722726}
   - {fileID: 83991368}
   - {fileID: 1780957752}
+  - {fileID: 1828991378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1931,6 +2177,8 @@ GameObject:
   - component: {fileID: 946153851}
   - component: {fileID: 946153853}
   - component: {fileID: 946153852}
+  - component: {fileID: 946153855}
+  - component: {fileID: 946153854}
   m_Layer: 6
   m_Name: Mercury
   m_TagString: Untagged
@@ -2163,6 +2411,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &946153854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946153846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &946153855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946153846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: "\u6C34\u661F\u306F\u592A\u967D\u306B\u6700\u3082\u8FD1\u3044\u60D1\u661F\u3067\u3042\u308A\u3001\u592A\u967D\u7CFB\u3067\u6700\u3082\u5C0F\u3055\u3044\u60D1\u661F\u3067\u3059\u3002\u5730\u7403\u306E\u6708\u3088\u308A\u308F\u305A\u304B\u306B\u5927\u304D\u3044\u3060\u3051\u3067\u3059\u3002"
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &969095787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2621,8 @@ GameObject:
   - component: {fileID: 1242939209}
   - component: {fileID: 1242939211}
   - component: {fileID: 1242939210}
+  - component: {fileID: 1242939213}
+  - component: {fileID: 1242939212}
   m_Layer: 6
   m_Name: Jupiter
   m_TagString: Untagged
@@ -2567,6 +2855,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1242939212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242939204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1242939213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242939204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &1303853239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2908,8 @@ GameObject:
   - component: {fileID: 1303853244}
   - component: {fileID: 1303853246}
   - component: {fileID: 1303853245}
+  - component: {fileID: 1303853248}
+  - component: {fileID: 1303853247}
   m_Layer: 6
   m_Name: Uranus
   m_TagString: Untagged
@@ -2814,6 +3142,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1303853247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303853239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1303853248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303853239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &1387886058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +3193,8 @@ GameObject:
   - component: {fileID: 1387886060}
   - component: {fileID: 1387886059}
   - component: {fileID: 1387886063}
+  - component: {fileID: 1387886065}
+  - component: {fileID: 1387886064}
   m_Layer: 6
   m_Name: Moon
   m_TagString: Untagged
@@ -2937,6 +3305,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a134577a29eb0f84c90cebc1e94e6ada, type: 2}
   orbitCenter: {fileID: 84976009}
+--- !u!114 &1387886064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387886058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1387886065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387886058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1 &1645793788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +3358,8 @@ GameObject:
   - component: {fileID: 1645793793}
   - component: {fileID: 1645793795}
   - component: {fileID: 1645793794}
+  - component: {fileID: 1645793797}
+  - component: {fileID: 1645793796}
   m_Layer: 6
   m_Name: Venus
   m_TagString: Untagged
@@ -3193,6 +3601,44 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1645793796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645793788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020fa203f13b9c4284e03eb91b60f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1645793797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645793788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c0d8ee3cc2484db072b5a5ff65409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: 
+  brief_info: 
+  detailed_info: 
+  mass: 0
+  radius: 0
+  rotation_speed: 0
+  revolution_speed: 0
+  orebit_radius: 0
+  initial_position_x: 0
+  initial_position_y: 0
+  initial_position_z: 0
+  gravity: 0
+  temperature: 0
+  scale: 0
 --- !u!1001 &1764028383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3294,6 +3740,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 596793704}
+    - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596793710}
+    - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596793709}
   m_SourcePrefab: {fileID: 100100000, guid: b4201d402613a4464b35c805dafcca62, type: 3}
 --- !u!1 &1780957751
 GameObject:
@@ -3433,6 +3885,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780957751}
   m_CullTransparentMesh: 1
+--- !u!1 &1828991377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828991378}
+  - component: {fileID: 1828991380}
+  - component: {fileID: 1828991379}
+  m_Layer: 5
+  m_Name: TooltipPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1828991378
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828991377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2138909444}
+  - {fileID: 2029464613}
+  m_Father: {fileID: 772665051}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: 75}
+  m_SizeDelta: {x: -500, y: -250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1828991379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828991377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.29803923, g: 0.29803923, b: 0.29803923, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1828991380
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828991377}
+  m_CullTransparentMesh: 1
 --- !u!1 &2021195986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,6 +4037,278 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021195986}
   m_CullTransparentMesh: 1
+--- !u!1 &2029464610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029464613}
+  - component: {fileID: 2029464612}
+  - component: {fileID: 2029464611}
+  m_Layer: 5
+  m_Name: DescriptionText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2029464611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029464610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2029464612
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029464610}
+  m_CullTransparentMesh: 1
+--- !u!224 &2029464613
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029464610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1828991378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2138909443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2138909444}
+  - component: {fileID: 2138909445}
+  - component: {fileID: 2138909446}
+  m_Layer: 5
+  m_Name: TitleText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2138909444
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138909443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1828991378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2138909445
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138909443}
+  m_CullTransparentMesh: 1
+--- !u!114 &2138909446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138909443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: c9adb1f542a93ae489bacfeae21e8394, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 1
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3527,3 +4328,4 @@ SceneRoots:
   - {fileID: 772665051}
   - {fileID: 321943783}
   - {fileID: 528370853}
+  - {fileID: 715275909}

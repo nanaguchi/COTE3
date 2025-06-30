@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlanetData", menuName = "ScriptableObjects/PlanetData", order = 1)]
-public class PlanetData : ScriptableObject
+public class PlanetData : MonoBehaviour
 {
     public string planetName; //文字型のデータ
     public string brief_info;//ツールチップ
