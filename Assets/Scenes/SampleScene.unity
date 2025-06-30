@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 77405044}
   - component: {fileID: 77405046}
   - component: {fileID: 77405045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neptune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83991367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -399,11 +399,11 @@ RectTransform:
   - {fileID: 632421881}
   - {fileID: 673170193}
   - {fileID: 969095788}
-  m_Father: {fileID: 902722726}
+  m_Father: {fileID: 772665051}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -120}
   m_SizeDelta: {x: 350, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83991369
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 84976010}
   - component: {fileID: 84976012}
   - component: {fileID: 84976011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 560598458}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1022,14 +1022,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 560598453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a890ba1aaa6208408034b37347faeb3, type: 3}
+  m_Script: {fileID: 11500000, guid: a9cc9cabae663934b80bb9de0ea0f5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1000
-  lookSpeed: 2
-  zoomSpeed: 1000
-  minZoom: 2
-  maxZoom: 10000
+  focusLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  freeMoveSpeed: 1000
+  freeLookSpeed: 2
+  freeZoomSpeed: 100000
+  largeObjectThreshold: 500
+  defaultDistanceMultiplier: 2.5
+  largeObjectDistanceMultiplier: 30
+  saturnDistanceMultiplier: 5000
+  focusChangeSpeed: 5
+  focusRotationSpeed: 120
+  focusZoomSpeed: 20
+  focusDistanceMinMax: {x: 10, y: 10000}
+  defocusKickback: 20
 --- !u!1 &569805972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1053,7 @@ GameObject:
   - component: {fileID: 569805974}
   - component: {fileID: 569805973}
   - component: {fileID: 569805977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1384,7 +1394,7 @@ GameObject:
   - component: {fileID: 650089231}
   - component: {fileID: 650089233}
   - component: {fileID: 650089232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1822,6 +1832,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 902722726}
+  - {fileID: 83991368}
+  - {fileID: 1780957752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1846,7 +1858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &902722726
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1858,9 +1870,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 83991368}
-  - {fileID: 1780957752}
+  m_Children: []
   m_Father: {fileID: 772665051}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1921,7 +1931,7 @@ GameObject:
   - component: {fileID: 946153851}
   - component: {fileID: 946153853}
   - component: {fileID: 946153852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mercury
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2325,7 +2335,7 @@ GameObject:
   - component: {fileID: 1242939209}
   - component: {fileID: 1242939211}
   - component: {fileID: 1242939210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jupiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2572,7 +2582,7 @@ GameObject:
   - component: {fileID: 1303853244}
   - component: {fileID: 1303853246}
   - component: {fileID: 1303853245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Uranus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2817,7 +2827,7 @@ GameObject:
   - component: {fileID: 1387886060}
   - component: {fileID: 1387886059}
   - component: {fileID: 1387886063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2942,7 +2952,7 @@ GameObject:
   - component: {fileID: 1645793793}
   - component: {fileID: 1645793795}
   - component: {fileID: 1645793794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Venus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3191,9 +3201,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103792917632102, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_Name
       value: Saturn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      propertyPath: m_TagString
+      value: SaturnFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445422062220386, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628933999407032, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865593898569828, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalScale.x
@@ -3286,16 +3320,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780957751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 902722726}
+  m_Father: {fileID: 772665051}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -130}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780957753
