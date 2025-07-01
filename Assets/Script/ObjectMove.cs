@@ -56,18 +56,19 @@ public class PlanetMotion : MonoBehaviour
             transform.position = orbitCenter.position + orbitPos;
         }
 
-        // --- 自転角度の計算 ---
-        // planetDataの自転周期(rotation_speed)が0でないことを確認
         if (Mathf.Abs(planetData.rotation_speed) > 0.001f)
-        {
-            // 1時間あたりに進む自転角度を計算
-            float rotationDegreesPerHour = 360f / planetData.rotation_speed;
+    {
+        float rotationDegreesPerHour = 360f / planetData.rotation_speed;
+        float currentRotationAngle = rotationDegreesPerHour * time;
 
-            // 現在のシミュレーション時間における自転の総角度を計算
-            float currentRotationAngle = rotationDegreesPerHour * time;
+        // 自転軸の傾きをZ軸に適用
+        Quaternion axialTilt = Quaternion.Euler(0, 0, planetData.angle);
 
-            // オブジェクトの向きを、計算した角度に直接設定する
-            transform.rotation = Quaternion.Euler(0, currentRotationAngle, 0);
-        }
+        // Y軸に沿って自転
+        Quaternion rotation = Quaternion.AngleAxis(currentRotationAngle, Vector3.up);
+
+        // 傾きと回転の合成
+        transform.rotation = axialTilt * rotation;
+    }
     }
 }
