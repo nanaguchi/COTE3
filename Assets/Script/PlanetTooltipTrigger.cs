@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// ‚±‚ÌƒXƒNƒŠƒvƒg‚ª‹@”\‚·‚é‚É‚ÍACollider‚ÆPlanetDataƒRƒ“ƒ|[ƒlƒ“ƒg‚ª•K—v
+// ï¿½ï¿½ï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½ï¿½@ï¿½\ï¿½ï¿½ï¿½ï¿½É‚ÍAColliderï¿½ï¿½PlanetDataï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Kï¿½v
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(PlanetData))]
 public class PlanetTooltipTrigger : MonoBehaviour
@@ -9,24 +9,24 @@ public class PlanetTooltipTrigger : MonoBehaviour
 
     void Awake()
     {
-        // ©g‚ª‚ÂPlanetDataƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
+        // ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PlanetDataï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½ï¿½ï¿½æ“¾
         planetData = GetComponent<PlanetData>();
     }
 
-    // ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ª‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒRƒ‰ƒCƒ_[‚Éæ‚Á‚½‚ÉŒÄ‚Î‚ê‚é
+    // ï¿½}ï¿½Eï¿½Xï¿½Jï¿½[ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉŒÄ‚Î‚ï¿½ï¿½
     void OnMouseEnter()
     {
-        // TooltipManager‚ÉA©g‚Ìî•ñ‚ğ“n‚µ‚Ä•\¦‚ğˆË—Š‚·‚é
+        // TooltipManagerï¿½ÉAï¿½ï¿½ï¿½gï¿½Ìï¿½ï¿½ï¿½nï¿½ï¿½ï¿½Ä•\ï¿½ï¿½ï¿½ï¿½ï¿½Ë—ï¿½ï¿½ï¿½ï¿½ï¿½
         if (planetData != null)
         {
-            TooltipManager.Instance.ShowTooltip(planetData.planetName, planetData.brief_info);
+            TooltipManager.Instance.ShowTooltip(planetData, this.transform);
         }
     }
 
-    // ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ª‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒRƒ‰ƒCƒ_[‚©‚çŠO‚ê‚½‚ÉŒÄ‚Î‚ê‚é
+    // ï¿½}ï¿½Eï¿½Xï¿½Jï¿½[ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½ï¿½ï¿½ï¿½Oï¿½ê‚½ï¿½ï¿½ï¿½ÉŒÄ‚Î‚ï¿½ï¿½
     void OnMouseExit()
     {
-        // TooltipManager‚É”ñ•\¦‚ğˆË—Š‚·‚é
+        // TooltipManagerï¿½É”ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½Ë—ï¿½ï¿½ï¿½ï¿½ï¿½
         TooltipManager.Instance.HideTooltip();
     }
 }
