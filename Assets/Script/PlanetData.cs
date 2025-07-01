@@ -17,4 +17,5 @@ public class PlanetData : MonoBehaviour
     public float gravity;
     public float temperature;//温度
     public float scale;
+    public float angle;
 }
