@@ -474,9 +474,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 528370852}
+        - m_Target: {fileID: 11500000, guid: 6b638f38427f9174d95c4428ceab7af3, type: 3}
           m_TargetAssemblyTypeName: TimeController, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -490,9 +490,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 528370852}
+        - m_Target: {fileID: 11500000, guid: 6b638f38427f9174d95c4428ceab7af3, type: 3}
           m_TargetAssemblyTypeName: TimeController, Assembly-CSharp
-          m_MethodName: OnPointerUp
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b638f38427f9174d95c4428ceab7af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSlider: {fileID: 83991369}
+  timeSlider: {fileID: 0}
   playbackSpeed: 24
   simulationTime: 0
 --- !u!4 &528370853

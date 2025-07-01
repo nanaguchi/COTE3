@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 330162696}
   - component: {fileID: 330162697}
   m_Layer: 5
-  m_Name: Slider (8)
+  m_Name: NeptuneSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2055,7 +2055,7 @@ GameObject:
   - component: {fileID: 584409825}
   - component: {fileID: 584409826}
   m_Layer: 5
-  m_Name: Slider (3)
+  m_Name: EarthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2221,7 +2221,7 @@ GameObject:
   - component: {fileID: 641194261}
   - component: {fileID: 641194262}
   m_Layer: 5
-  m_Name: Slider (5)
+  m_Name: JupiterSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2761,7 +2761,7 @@ GameObject:
   - component: {fileID: 845729214}
   - component: {fileID: 845729215}
   m_Layer: 5
-  m_Name: Slider (4)
+  m_Name: MarsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3634,7 +3634,7 @@ GameObject:
   - component: {fileID: 1240091007}
   - component: {fileID: 1240091008}
   m_Layer: 5
-  m_Name: Slider (2)
+  m_Name: VenusSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4033,7 +4033,7 @@ GameObject:
   - component: {fileID: 1539298494}
   - component: {fileID: 1539298495}
   m_Layer: 5
-  m_Name: Slider (6)
+  m_Name: 'SaturnSlider '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4599,7 +4599,7 @@ GameObject:
   - component: {fileID: 1663911189}
   - component: {fileID: 1663911190}
   m_Layer: 5
-  m_Name: Slider (7)
+  m_Name: UranusSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
