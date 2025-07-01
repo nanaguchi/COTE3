@@ -406,6 +406,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &83991367
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,9 +515,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 528370852}
+        - m_Target: {fileID: 11500000, guid: 6b638f38427f9174d95c4428ceab7af3, type: 3}
           m_TargetAssemblyTypeName: TimeController, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -530,9 +531,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 528370852}
+        - m_Target: {fileID: 11500000, guid: 6b638f38427f9174d95c4428ceab7af3, type: 3}
           m_TargetAssemblyTypeName: TimeController, Assembly-CSharp
-          m_MethodName: OnPointerUp
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -829,6 +830,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &321943780
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b638f38427f9174d95c4428ceab7af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSlider: {fileID: 83991369}
+  timeSlider: {fileID: 0}
   playbackSpeed: 24
   simulationTime: 0
 --- !u!4 &528370853
@@ -1283,6 +1285,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &596793699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
@@ -1462,6 +1465,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &632421880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1828,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &673170192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2454,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &969095787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,6 +2899,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &1303853239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +3187,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &1387886058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,6 +3351,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1 &1645793788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,6 +3648,7 @@ MonoBehaviour:
   gravity: 0
   temperature: 0
   scale: 0
+  angle: 0
 --- !u!1001 &1764028383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3701,11 +3711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97297776
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.23089886
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3717,7 +3727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -4077,7 +4087,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bba8931db6a9be14b8f6c92ba11e1c1f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4143,7 +4153,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2029464612
@@ -4240,7 +4250,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9adb1f542a93ae489bacfeae21e8394, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bba8931db6a9be14b8f6c92ba11e1c1f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
