@@ -26,3 +26,4 @@ MonoBehaviour:
   gravity: 3.7
   temperature: 167
   scale: 0.4879
+  angle: 0.03
