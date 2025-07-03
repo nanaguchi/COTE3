@@ -8,10 +8,14 @@ public class CelestialBody : MonoBehaviour
     void OnMouseEnter()
     {   
         if (planetData != null)
-    {
-        TooltipManager.Instance.ShowTooltip(planetData, this.transform); // 自分自身を渡す
+        {
+            TooltipManager.Instance.ShowTooltip(
+                planetData.planetName,       // タイトル
+                planetData.brief_info,       // 説明
+                this.transform               // 自分のTransform
+            );
+        }
     }
-}
 
     void OnMouseExit()
     {
