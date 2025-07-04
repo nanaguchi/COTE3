@@ -28,4 +28,6 @@ public class SceneTransitionManager : MonoBehaviour
             Debug.LogError("シーン名が指定されていません！");
         }
     }
+
+
 }
