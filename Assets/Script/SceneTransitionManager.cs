@@ -16,4 +16,16 @@ public class SceneTransitionManager : MonoBehaviour
             Debug.LogError("シーン名が指定されていません！");
         }
     }
+
+    public void GoToScene1(string sceneName)
+    {
+        if (!string.IsNullOrEmpty("title2"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("title2");
+        }
+        else
+        {
+            Debug.LogError("シーン名が指定されていません！");
+        }
+    }
 }
