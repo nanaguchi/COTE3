@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 77405048}
   - component: {fileID: 77405047}
   - component: {fileID: 77405049}
-  - component: {fileID: 77405050}
   - component: {fileID: 77405051}
   m_Layer: 6
   m_Name: Neptune
@@ -425,18 +424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 77405048}
---- !u!114 &77405050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77405039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &77405051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +590,6 @@ GameObject:
   - component: {fileID: 84976014}
   - component: {fileID: 84976013}
   - component: {fileID: 84976015}
-  - component: {fileID: 84976016}
   - component: {fileID: 84976017}
   m_Layer: 6
   m_Name: Earth
@@ -891,18 +877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 84976014}
---- !u!114 &84976016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84976005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &84976017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,18 +1875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 0}
---- !u!114 &596793715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596793699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &596793719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,7 +1980,6 @@ GameObject:
   - component: {fileID: 650089235}
   - component: {fileID: 650089234}
   - component: {fileID: 650089236}
-  - component: {fileID: 650089237}
   - component: {fileID: 650089238}
   m_Layer: 6
   m_Name: Mars
@@ -2305,18 +2266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 0}
---- !u!114 &650089237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650089226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &650089238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3288,7 +3237,6 @@ GameObject:
   - component: {fileID: 1242939213}
   - component: {fileID: 1242939212}
   - component: {fileID: 1242939214}
-  - component: {fileID: 1242939215}
   - component: {fileID: 1242939216}
   m_Layer: 6
   m_Name: Jupiter
@@ -3576,18 +3524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 1242939213}
---- !u!114 &1242939215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242939204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1242939216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3618,7 +3554,6 @@ GameObject:
   - component: {fileID: 1303853248}
   - component: {fileID: 1303853247}
   - component: {fileID: 1303853249}
-  - component: {fileID: 1303853250}
   - component: {fileID: 1303853251}
   m_Layer: 6
   m_Name: Uranus
@@ -3906,18 +3841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 1303853248}
---- !u!114 &1303853250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303853239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1303853251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3958,7 +3881,6 @@ GameObject:
   - component: {fileID: 1387886064}
   - component: {fileID: 1387886066}
   - component: {fileID: 1387886067}
-  - component: {fileID: 1387886068}
   - component: {fileID: 1387886069}
   m_Layer: 6
   m_Name: Moon
@@ -4230,18 +4152,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1387886068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387886058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1387886069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4294,7 +4204,6 @@ GameObject:
   - component: {fileID: 1645793797}
   - component: {fileID: 1645793796}
   - component: {fileID: 1645793798}
-  - component: {fileID: 1645793799}
   - component: {fileID: 1645793800}
   m_Layer: 6
   m_Name: Venus
@@ -4591,18 +4500,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetData: {fileID: 1645793797}
---- !u!114 &1645793799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645793788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f912d4a159dfe3419f5ef20aa743563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1645793800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4725,9 +4622,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 596793714}
-    - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 596793715}
     - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 596793719}
@@ -5050,6 +4944,10 @@ PrefabInstance:
     - target: {fileID: 3203250621193277199, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3333834903004526871, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchorMax.y
