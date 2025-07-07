@@ -1,22 +1,29 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlanetData", menuName = "ScriptableObjects/PlanetData", order = 1)]
+// MonoBehaviourを継承しているので、[CreateAssetMenu]属性は不要です。削除しました。
 public class PlanetData : MonoBehaviour
 {
-    public string planetName; //文字型のデータ
-    public string brief_info;//ツールチップ
-    public string detailed_info;//詳細説明
-    public float mass;//ここから数字　質量
-    public float radius;//設計書は直径だができれば半径直径にするならdiameterにかえてくれ　
-    public float rotation_speed;//自転
-    public float revolution_speed;//交転
-    public float orebit_radius;//軌道半径
-    public float initial_position_x;//初期位置
+    [Header("基本情報")]
+    public string planetName;       // 惑星名
+    [TextArea(3, 5)]
+    public string brief_info;       // ツールチップ用情報
+    [TextArea(5, 10)]
+    public string detailed_info;    // 詳細パネル用情報
+    public string detailSceneName;  // 詳細シーン名
+
+    [Header("物理パラメータ")]
+    public double mass;             // 質量 (kg) - 値が大きいためdouble型
+    public float radius;            // 半径 (km)
+    public float rotation_speed;    // 自転周期 (時間単位)
+    public float revolution_speed;  // 公転周期 (日単位)
+    public float orebit_radius;     // 軌道半径 (原文ママ)
+    public float gravity;           // 表面重力 (m/s^2)
+    public float temperature;       // 平均表面温度 (°C)
+
+    [Header("シミュレーション用パラメータ")]
+    public float initial_position_x;
     public float initial_position_y;
     public float initial_position_z;
-    public float gravity;
-    public float temperature;//温度
     public float scale;
     public float angle;
-    public string detailSceneName;
 }
