@@ -29,5 +29,16 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
+    public void GoToSampleScene(string sceneName)
+    {
+        if (!string.IsNullOrEmpty("title2"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        }
+        else
+        {
+            Debug.LogError("シーン名が指定されていません！");
+        }
+    }
 
 }
