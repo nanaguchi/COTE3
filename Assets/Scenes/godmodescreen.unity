@@ -1342,6 +1342,7 @@ GameObject:
   - component: {fileID: 560598455}
   - component: {fileID: 560598454}
   - component: {fileID: 560598458}
+  - component: {fileID: 560598459}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1494,6 +1495,66 @@ MonoBehaviour:
   focusZoomSpeed: 20
   focusDistanceMinMax: {x: 10, y: 10000}
   defocusKickback: 20
+--- !u!114 &560598459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560598453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 560598457}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &569805972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,6 +2468,7 @@ GameObject:
   - component: {fileID: 946153852}
   - component: {fileID: 946153855}
   - component: {fileID: 946153854}
+  - component: {fileID: 946153856}
   m_Layer: 6
   m_Name: Mercury
   m_TagString: Untagged
@@ -2682,6 +2744,20 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+--- !u!114 &946153856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946153846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c06d364a2be8db4cb23c0f6eedbfecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playbackSpeed: 24
+  simulationTime: 0
 --- !u!1 &1012240369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,8 +2794,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -300, y: 175}
-  m_SizeDelta: {x: -600, y: -350}
+  m_AnchoredPosition: {x: -300, y: 150}
+  m_SizeDelta: {x: -600, y: -300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012240371
 MonoBehaviour:
