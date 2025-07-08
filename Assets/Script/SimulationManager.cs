@@ -1,63 +1,170 @@
-// SimulationManager.cs の基本的な形
 using UnityEngine;
+using System.Collections;
 
 public class SimulationManager : MonoBehaviour
 {
-    public PlanetData[] allPlanets; // インスペクターで全天体を設定
-    public Light sunLight;          // 太陽の光源を設定
+    [Header("シミュレーション対象")]
+    public PlanetData[] allPlanets;
+    public Light sunLight;
+
+    [Header("太陽の設定")]
+    public Material sunMaterial;
+    public Gradient sunColorGradient;
+
+    [Header("重力シミュレーション設定")]
+    public float collapseGravityThreshold = 500f;
+    public float disintegrationGravityThreshold = 0.1f;
+    public float disappearDuration = 1.5f;
+
+    // ★追加：太陽が健在かどうかを追跡するフラグ
+    private bool isSunAlive = true;
 
     void Update()
     {
-        // 毎フレーム、全天体の状態をチェックし、物理法則を適用する
+        // 毎フレーム、物理法則と見た目を適用する
         ApplyPhysicsAndVisuals();
+
+        // ★変更点：ここにあった太陽の消滅を検知するif文は不要なので削除します
     }
+
+    // ★追加：惑星を軌道から解放するメソッド
+    void ReleasePlanetsFromOrbit()
+    {
+        Debug.Log("太陽が消滅しました！全惑星が軌道を離脱します。");
+
+        // 太陽以外の全ての惑星をループ
+        for (int i = 1; i < allPlanets.Length; i++)
+        {
+            if (allPlanets[i] != null)
+            {
+                // 惑星の軌道制御スクリプトを取得 (あなたのスクリプト名に合わせてください)
+                ObjectMove motionScript = allPlanets[i].GetComponent<ObjectMove>();
+                if (motionScript != null)
+                {
+                    // 軌道を停止させる命令を呼び出す
+                    motionScript.GoRogue();
+                }
+            }
+        }
+    }
+
+    // --- 以下、既存のメソッド（変更なし） ---
 
     void ApplyPhysicsAndVisuals()
     {
-        // これからここに、様々な物理シミュレーションの処理を書いていく
-        // 例：太陽の温度変化を反映させる処理
-        UpdateSunVisuals();
-        
-        // 例：全天体の軌道を計算する処理
-        UpdateAllOrbits();
+        if (isSunAlive) // 太陽が健在な時だけ実行
+        {
+            UpdateSunVisuals();
+        }
+        UpdateGravityEffects();
+        // UpdateAllOrbits(); // ←この行はObjectMoveが各自行うので不要になります
     }
     
-    // 以下に各処理の具体的なメソッドを追加していく
-    // インスペクターで設定する項目を追加
-[Header("太陽の設定")]
-public PlanetData sunData;
-public Material sunMaterial; // 太陽オブジェクトのマテリアル
-public Gradient sunColorGradient; // 温度と色を対応させるグラデーション
+    void UpdateGravityEffects()
+    {
+        // 全ての惑星をチェック
+        foreach (PlanetData planet in allPlanets)
+        {
+            if (planet == null || !planet.gameObject.activeSelf) continue;
 
-// SimulationManager.cs の中のメソッドを書き換え
+            // ★追加：もし「無敵」にチェックが入っていたら、この天体の消滅判定をスキップする
+            if (planet.isIndestructible)
+            {
+                continue; // 次の天体のチェックに移る
+            }
 
-void UpdateSunVisuals()
-{
-    // nullチェック: ここでSun Materialが設定されているか確認
-    if (sunData == null || sunMaterial == null || sunLight == null) return;
+            // --- 状態変化の判定 ---
+            
+            // 1. 重力が強すぎて崩壊する場合
+            if (planet.gravity > collapseGravityThreshold)
+            {
+                TriggerExplosion(planet, "重力崩壊");
+                continue;
+            }
 
-    float maxTemp = 5500f;
-    // 温度が0にならないように下限を設定
-    float currentTemp = Mathf.Max(sunData.temperature, 1.0f); 
-    float intensityRatio = currentTemp / maxTemp;
+            // 2. 重力が弱すぎて消滅する場合
+            if (planet.gravity < disintegrationGravityThreshold)
+            {
+                TriggerExplosion(planet, "重力による消滅");
+                continue;
+            }
+        }
+    }
 
-    // Gradientから新しい色を取得
-    Color newSunColor = sunColorGradient.Evaluate(intensityRatio);
+    void TriggerExplosion(PlanetData planet, string reason)
+    {
+        Debug.Log(planet.planetName + " が " + reason + " しました。");
+        StartCoroutine(FadeAndDestroy(planet));
+    }
 
-    // ★★★ 修正ポイント１ ★★★
-    // 太陽オブジェクト自体を強く発光させる
-    // これで太陽が緑色に光ります
-    sunMaterial.SetColor("_EmissionColor", newSunColor * 2.0f); // 2.0fを掛けて明るく光らせる
-    sunMaterial.color = newSunColor; // オブジェクト自体の基本色も変更
+    IEnumerator FadeAndDestroy(PlanetData planet)
+    {
+        Renderer planetRenderer = planet.GetComponent<Renderer>();
+        Vector3 originalScale = planet.transform.localScale;
+        float elapsedTime = 0f;
 
-    // ★★★ 修正ポイント２ ★★★
-    // シーンを照らす光の色は、真っ白か、少しだけ太陽の色を混ぜる程度にする
-    // これで他の惑星が緑色に染まるのを防ぎます
-    sunLight.color = Color.Lerp(Color.white, newSunColor, 0.25f); // 75%の白と25%の太陽色を混ぜる
+        while (elapsedTime < disappearDuration)
+        {
+            float progress = elapsedTime / disappearDuration;
+            float alpha = Mathf.Lerp(1f, 0f, progress);
+            float scale = Mathf.Lerp(1f, 0f, progress);
+            if (planetRenderer != null && planetRenderer.material.HasProperty("_Color"))
+            {
+                Color newColor = planetRenderer.material.color;
+                newColor.a = alpha;
+                planetRenderer.material.color = newColor;
+            }
+            planet.transform.localScale = originalScale * scale;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        if (planet.explosionEffectPrefab != null)
+        {
+            Instantiate(planet.explosionEffectPrefab, planet.transform.position, Quaternion.identity);
+        }
 
-    // 太陽の光の強さを温度に連動させる
-    sunLight.intensity = 2f * intensityRatio;
+        // ★★★ ここからが修正部分 ★★★
+        if (planet == allPlanets[0]) // もし消滅するのが太陽なら
+        {
+            // 見た目と光を消す
+            if(planetRenderer != null) planetRenderer.enabled = false;
+            if(sunLight != null) sunLight.enabled = false;
+            
+            // ★重要：ここで、他の惑星に軌道を離脱するよう命令する
+            ReleasePlanetsFromOrbit();
+        }
+        else
+        {
+            // 太陽以外の天体なら、オブジェクトごと非表示にする
+            planet.gameObject.SetActive(false);
+        }
+        
+        // ★★★ ここまでが修正部分 ★★★
 
-}
-    void UpdateAllOrbits() { /* ... */ }
+        planet.transform.localScale = originalScale;
+        if(planetRenderer != null && planetRenderer.material.HasProperty("_Color"))
+        {
+            Color originalColor = planetRenderer.material.color;
+            originalColor.a = 1f;
+            planetRenderer.material.color = originalColor;
+        }
+    }
+    
+    void UpdateSunVisuals()
+    {
+        if (allPlanets.Length == 0 || allPlanets[0] == null || sunMaterial == null || sunLight == null) return;
+        PlanetData sunData = allPlanets[0];
+        float maxTemp = 5500f;
+        float currentTemp = Mathf.Max(sunData.temperature, 1.0f);
+        float intensityRatio = currentTemp / maxTemp;
+        Color newSunColor = sunColorGradient.Evaluate(intensityRatio);
+        sunMaterial.SetColor("_EmissionColor", newSunColor * 2.0f);
+        sunMaterial.color = newSunColor;
+        sunLight.color = Color.Lerp(Color.white, newSunColor, 0.25f);
+        sunLight.intensity = 2f * intensityRatio;
+    }
+
+    // このメソッドは各惑星が個別に行うようになったので、空にするか削除します
+    void UpdateAllOrbits() {}
 }

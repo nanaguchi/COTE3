@@ -26,4 +26,8 @@ public class PlanetData : MonoBehaviour
     public float initial_position_z;
     public float scale;
     public float angle;
+    public float initialgravity; // ★追加：初期の重力値
+    public GameObject explosionEffectPrefab; // ★追加：爆発エフェクトのプレハブ
+
+    public bool isIndestructible = false; // ★この行を追加
 }
