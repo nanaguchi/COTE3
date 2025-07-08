@@ -55,7 +55,6 @@ public class TooltipManager : MonoBehaviour
     tooltipPanel.SetActive(true);
     titleText.text = title;
     descriptionText.text = description;
-    Debug.Log("aaa"+description);
     targetTransform = target;
 }
 
