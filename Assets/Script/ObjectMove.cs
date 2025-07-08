@@ -47,7 +47,7 @@ public class ObjectMove : MonoBehaviour
         if (Mathf.Abs(planetData.revolution_speed) > 0.001f)
         {
             float revolutionDegreesPerHour = 360f / planetData.revolution_speed;
-            float currentRevolutionAngle = revolutionDegreesPerHour * time;
+            float currentRevolutionAngle = revolutionDegreesPerHour * time / 15;
             float radian = currentRevolutionAngle * Mathf.Deg2Rad;
             Vector3 orbitPos = new Vector3(
                 Mathf.Cos(radian) * planetData.orebit_radius * 10,
@@ -59,7 +59,7 @@ public class ObjectMove : MonoBehaviour
         if (Mathf.Abs(planetData.rotation_speed) > 0.001f)
         {
             float rotationDegreesPerHour = 360f / planetData.rotation_speed;
-            float currentRotationAngle = rotationDegreesPerHour * time;
+            float currentRotationAngle = rotationDegreesPerHour * time / 15;
             Quaternion axialTilt = Quaternion.Euler(0, 0, planetData.angle);
             Quaternion rotation = Quaternion.AngleAxis(currentRotationAngle, Vector3.up);
             transform.rotation = axialTilt * rotation;

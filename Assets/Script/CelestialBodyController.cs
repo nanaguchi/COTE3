@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class CelestialBodyController : MonoBehaviour
 {
-    // --- Inspector‚Åİ’è‚·‚é€–Ú ---
+    // --- Inspectorï¿½Åİ’è‚·ï¿½é€ï¿½ï¿½ ---
 
-    [Header("Œö“]‚Ìİ’è")]
-    public Transform orbitCenter; // Œö“]‚Ì’†S‚Æ‚È‚é“V‘Ìi—áF‘¾—zj
-    public float orbitSpeed = 10f; // Œö“]‚Ì‘¬‚³i“x/•bj
+    [Header("ï¿½ï¿½ï¿½]ï¿½Ìİ’ï¿½")]
+    public Transform orbitCenter; // ï¿½ï¿½ï¿½]ï¿½Ì’ï¿½ï¿½Sï¿½Æ‚È‚ï¿½Vï¿½Ìiï¿½ï¿½Fï¿½ï¿½ï¿½zï¿½j
+    public float orbitSpeed = 1f; // ï¿½ï¿½ï¿½]ï¿½Ì‘ï¿½ï¿½ï¿½ï¿½iï¿½x/ï¿½bï¿½j
 
-    [Header("©“]‚Ìİ’è")]
-    public float rotationSpeed = 10f; // ©“]‚Ì‘¬‚³i“x/•bj
+    [Header("rotation")]
+    public float rotationSpeed = 1f; // ï¿½ï¿½ï¿½]ï¿½Ì‘ï¿½ï¿½ï¿½ï¿½iï¿½x/ï¿½bï¿½j
 
     // Update is called once per frame
     void Update()
     {
-        // --- 1. ©“]ˆ— ---
-        // ©•ª©g‚ÌY²‚ğ’†S‚ÉAw’è‚µ‚½‘¬“x‚Å‰ñ“]‚³‚¹‚é
-        // Time.deltaTime‚ğŠ|‚¯‚é‚±‚Æ‚ÅAƒtƒŒ[ƒ€ƒŒ[ƒg‚ÉˆË‘¶‚µ‚È‚¢ŠŠ‚ç‚©‚È“®‚«‚É‚È‚é
+        // --- 1. ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ---
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½Yï¿½ï¿½ï¿½ğ’†Sï¿½ÉAï¿½wï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Å‰ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // Time.deltaTimeï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ÅAï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½gï¿½ÉˆË‘ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ç‚©ï¿½È“ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
 
-        // --- 2. Œö“]ˆ— ---
-        // ‚à‚µŒö“]‚Ì’†S(orbitCenter)‚ªİ’è‚³‚ê‚Ä‚¢‚ê‚ÎAŒö“]‚ğs‚¤
+        // --- 2. ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ---
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]ï¿½Ì’ï¿½ï¿½S(orbitCenter)ï¿½ï¿½ï¿½İ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ÎAï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½sï¿½ï¿½
         if (orbitCenter != null)
         {
-            // orbitCenter‚Ìü‚è‚ğAY²‚ğ²‚Æ‚µ‚ÄAw’è‚µ‚½‘¬“x‚ÅŒö“]‚³‚¹‚é
+            // orbitCenterï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½AYï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½wï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ÅŒï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             transform.RotateAround(orbitCenter.position, Vector3.up, orbitSpeed * Time.deltaTime);
         }
     }
