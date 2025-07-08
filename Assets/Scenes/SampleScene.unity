@@ -411,6 +411,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &77405049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +867,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &84976015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,7 +935,6 @@ MonoBehaviour:
   - {fileID: 1303853248}
   - {fileID: 77405048}
   sunLight: {fileID: 1225618895}
-  sunData: {fileID: 569805979}
   sunMaterial: {fileID: 2100000, guid: a555af70031a7c1409e4add5dfc1b42f, type: 2}
   sunColorGradient:
     serializedVersion: 2
@@ -961,6 +966,9 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  collapseGravityThreshold: 500
+  disintegrationGravityThreshold: 4
+  disappearDuration: 7
 --- !u!4 &253593551
 Transform:
   m_ObjectHideFlags: 0
@@ -1548,6 +1556,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+  isIndestructible: 0
 --- !u!114 &569805980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,6 +1873,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &596793714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2267,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 1
 --- !u!114 &650089236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3015,6 +3032,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 1
 --- !u!114 &946153856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3511,6 +3531,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &1242939214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3828,6 +3851,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &1303853249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4032,6 +4058,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &1387886066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4487,6 +4516,9 @@ MonoBehaviour:
   initial_position_z: 0
   scale: 0
   angle: 0
+  initialgravity: 0
+  explosionEffectPrefab: {fileID: 0}
+  isIndestructible: 0
 --- !u!114 &1645793798
 MonoBehaviour:
   m_ObjectHideFlags: 0
