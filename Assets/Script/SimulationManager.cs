@@ -1,91 +1,97 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
-    [Header("ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‘ÎÛ")]
+    [Header("ï¿½Vï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Îï¿½")]
     public PlanetData[] allPlanets;
     public Light sunLight;
 
-    [Header("‘¾—z‚Ìİ’è")]
+    [Header("ï¿½ï¿½ï¿½zï¿½Ìİ’ï¿½")]
     public Material sunMaterial;
     public Gradient sunColorGradient;
 
-    [Header("d—ÍƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“İ’è")]
+    [Header("ï¿½dï¿½ÍƒVï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½İ’ï¿½")]
     public float collapseGravityThreshold = 500f;
     public float disintegrationGravityThreshold = 0.1f;
     public float disappearDuration = 1.5f;
 
-    // š’Ç‰ÁF‘¾—z‚ªŒ’İ‚©‚Ç‚¤‚©‚ğ’ÇÕ‚·‚éƒtƒ‰ƒO
+    // ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½Fï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ÇÕ‚ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O
     private bool isSunAlive = true;
+
+     public void ResetGameToInitialState()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
 
     void Update()
     {
-        // –ˆƒtƒŒ[ƒ€A•¨—–@‘¥‚ÆŒ©‚½–Ú‚ğ“K—p‚·‚é
+        // ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ÆŒï¿½ï¿½ï¿½ï¿½Ú‚ï¿½Kï¿½pï¿½ï¿½ï¿½ï¿½
         ApplyPhysicsAndVisuals();
 
-        // š•ÏX“_F‚±‚±‚É‚ ‚Á‚½‘¾—z‚ÌÁ–Å‚ğŒŸ’m‚·‚éif•¶‚Í•s—v‚È‚Ì‚Åíœ‚µ‚Ü‚·
+        // ï¿½ï¿½ï¿½ÏXï¿½_ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½Ìï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½Í•sï¿½vï¿½È‚Ì‚Åíœï¿½ï¿½ï¿½Ü‚ï¿½
     }
 
-    // š’Ç‰ÁF˜f¯‚ğ‹O“¹‚©‚ç‰ğ•ú‚·‚éƒƒ\ƒbƒh
+    // ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½Fï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½éƒï¿½\ï¿½bï¿½h
     void ReleasePlanetsFromOrbit()
     {
-        Debug.Log("‘¾—z‚ªÁ–Å‚µ‚Ü‚µ‚½I‘S˜f¯‚ª‹O“¹‚ğ—£’E‚µ‚Ü‚·B");
+        Debug.Log("ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½Iï¿½Sï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ğ—£’Eï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B");
 
-        // ‘¾—zˆÈŠO‚Ì‘S‚Ä‚Ì˜f¯‚ğƒ‹[ƒv
+        // ï¿½ï¿½ï¿½zï¿½ÈŠOï¿½Ì‘Sï¿½Ä‚Ì˜fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½v
         for (int i = 1; i < allPlanets.Length; i++)
         {
             if (allPlanets[i] != null)
             {
-                // ˜f¯‚Ì‹O“¹§ŒäƒXƒNƒŠƒvƒg‚ğæ“¾ (‚ ‚È‚½‚ÌƒXƒNƒŠƒvƒg–¼‚É‡‚í‚¹‚Ä‚­‚¾‚³‚¢)
+                // ï¿½fï¿½ï¿½ï¿½Ì‹Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½ï¿½æ“¾ (ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½ï¿½Éï¿½ï¿½í‚¹ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
                 ObjectMove motionScript = allPlanets[i].GetComponent<ObjectMove>();
                 if (motionScript != null)
                 {
-                    // ‹O“¹‚ğ’â~‚³‚¹‚é–½—ß‚ğŒÄ‚Ño‚·
+                    // ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½é–½ï¿½ß‚ï¿½ï¿½Ä‚Ñoï¿½ï¿½
                     motionScript.GoRogue();
                 }
             }
         }
     }
 
-    // --- ˆÈ‰ºAŠù‘¶‚Ìƒƒ\ƒbƒhi•ÏX‚È‚µj ---
+    // --- ï¿½È‰ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½iï¿½ÏXï¿½È‚ï¿½ï¿½j ---
 
     void ApplyPhysicsAndVisuals()
     {
-        if (isSunAlive) // ‘¾—z‚ªŒ’İ‚È‚¾‚¯Às
+        if (isSunAlive) // ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½İ‚Èï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½s
         {
             UpdateSunVisuals();
         }
         UpdateGravityEffects();
-        // UpdateAllOrbits(); // ©‚±‚Ìs‚ÍObjectMove‚ªŠe©s‚¤‚Ì‚Å•s—v‚É‚È‚è‚Ü‚·
+        // UpdateAllOrbits(); // ï¿½ï¿½ï¿½ï¿½ï¿½Ìsï¿½ï¿½ObjectMoveï¿½ï¿½ï¿½eï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ì‚Å•sï¿½vï¿½É‚È‚ï¿½Ü‚ï¿½
     }
     
     void UpdateGravityEffects()
     {
-        // ‘S‚Ä‚Ì˜f¯‚ğƒ`ƒFƒbƒN
+        // ï¿½Sï¿½Ä‚Ì˜fï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
         foreach (PlanetData planet in allPlanets)
         {
             if (planet == null || !planet.gameObject.activeSelf) continue;
 
-            // š’Ç‰ÁF‚à‚µu–³“Gv‚Éƒ`ƒFƒbƒN‚ª“ü‚Á‚Ä‚¢‚½‚çA‚±‚Ì“V‘Ì‚ÌÁ–Å”»’è‚ğƒXƒLƒbƒv‚·‚é
+            // ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½Gï¿½vï¿½Éƒ`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ì“Vï¿½Ì‚Ìï¿½ï¿½Å”ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Lï¿½bï¿½vï¿½ï¿½ï¿½ï¿½
             if (planet.isIndestructible)
             {
-                continue; // Ÿ‚Ì“V‘Ì‚Ìƒ`ƒFƒbƒN‚ÉˆÚ‚é
+                continue; // ï¿½ï¿½ï¿½Ì“Vï¿½Ì‚Ìƒ`ï¿½Fï¿½bï¿½Nï¿½ÉˆÚ‚ï¿½
             }
 
-            // --- ó‘Ô•Ï‰»‚Ì”»’è ---
+            // --- ï¿½ï¿½Ô•Ï‰ï¿½ï¿½Ì”ï¿½ï¿½ï¿½ ---
             
-            // 1. d—Í‚ª‹­‚·‚¬‚Ä•ö‰ó‚·‚éê‡
+            // 1. ï¿½dï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä•ï¿½ï¿½ó‚·‚ï¿½ê‡
             if (planet.gravity > collapseGravityThreshold)
             {
-                TriggerExplosion(planet, "d—Í•ö‰ó");
+                TriggerExplosion(planet, "ï¿½dï¿½Í•ï¿½ï¿½ï¿½");
                 continue;
             }
 
-            // 2. d—Í‚ªã‚·‚¬‚ÄÁ–Å‚·‚éê‡
+            // 2. ï¿½dï¿½Í‚ï¿½ï¿½ã‚·ï¿½ï¿½ï¿½Äï¿½ï¿½Å‚ï¿½ï¿½ï¿½ê‡
             if (planet.gravity < disintegrationGravityThreshold)
             {
-                TriggerExplosion(planet, "d—Í‚É‚æ‚éÁ–Å");
+                TriggerExplosion(planet, "ï¿½dï¿½Í‚É‚ï¿½ï¿½ï¿½ï¿½ï¿½");
                 continue;
             }
         }
@@ -93,7 +99,7 @@ public class SimulationManager : MonoBehaviour
 
     void TriggerExplosion(PlanetData planet, string reason)
     {
-        Debug.Log(planet.planetName + " ‚ª " + reason + " ‚µ‚Ü‚µ‚½B");
+        Debug.Log(planet.planetName + " ï¿½ï¿½ " + reason + " ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B");
         StartCoroutine(FadeAndDestroy(planet));
     }
 
@@ -124,23 +130,23 @@ public class SimulationManager : MonoBehaviour
             Instantiate(planet.explosionEffectPrefab, planet.transform.position, Quaternion.identity);
         }
 
-        // ššš ‚±‚±‚©‚ç‚ªC³•”•ª ššš
-        if (planet == allPlanets[0]) // ‚à‚µÁ–Å‚·‚é‚Ì‚ª‘¾—z‚È‚ç
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç‚ªï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        if (planet == allPlanets[0]) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½zï¿½È‚ï¿½
         {
-            // Œ©‚½–Ú‚ÆŒõ‚ğÁ‚·
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ú‚ÆŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if(planetRenderer != null) planetRenderer.enabled = false;
             if(sunLight != null) sunLight.enabled = false;
             
-            // šd—vF‚±‚±‚ÅA‘¼‚Ì˜f¯‚É‹O“¹‚ğ—£’E‚·‚é‚æ‚¤–½—ß‚·‚é
+            // ï¿½ï¿½ï¿½dï¿½vï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½ÅAï¿½ï¿½ï¿½Ì˜fï¿½ï¿½ï¿½É‹Oï¿½ï¿½ï¿½ğ—£’Eï¿½ï¿½ï¿½ï¿½æ‚¤ï¿½ï¿½ï¿½ß‚ï¿½ï¿½ï¿½
             ReleasePlanetsFromOrbit();
         }
         else
         {
-            // ‘¾—zˆÈŠO‚Ì“V‘Ì‚È‚çAƒIƒuƒWƒFƒNƒg‚²‚Æ”ñ•\¦‚É‚·‚é
+            // ï¿½ï¿½ï¿½zï¿½ÈŠOï¿½Ì“Vï¿½Ì‚È‚ï¿½Aï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Æ”ï¿½\ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
             planet.gameObject.SetActive(false);
         }
         
-        // ššš ‚±‚±‚Ü‚Å‚ªC³•”•ª ššš
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Å‚ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         planet.transform.localScale = originalScale;
         if(planetRenderer != null && planetRenderer.material.HasProperty("_Color"))
@@ -165,6 +171,8 @@ public class SimulationManager : MonoBehaviour
         sunLight.intensity = 2f * intensityRatio;
     }
 
-    // ‚±‚Ìƒƒ\ƒbƒh‚ÍŠe˜f¯‚ªŒÂ•Ê‚És‚¤‚æ‚¤‚É‚È‚Á‚½‚Ì‚ÅA‹ó‚É‚·‚é‚©íœ‚µ‚Ü‚·
+    
+
+    // ï¿½ï¿½ï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ÍŠeï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Â•Ê‚Ésï¿½ï¿½ï¿½æ‚¤ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½Ì‚ÅAï¿½ï¿½É‚ï¿½ï¿½é‚©ï¿½íœï¿½ï¿½ï¿½Ü‚ï¿½
     void UpdateAllOrbits() {}
 }
