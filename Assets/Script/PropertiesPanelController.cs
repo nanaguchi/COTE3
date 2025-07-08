@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class PropertiesPanelController : MonoBehaviour
 {
-
-
     [Header("タブ設定")]
     public Button[] tabButtons;
     public GameObject[] underlines;
@@ -21,9 +20,7 @@ public class PropertiesPanelController : MonoBehaviour
     private bool isPanelOpen = false;
     private RectTransform toggleButtonRect;
     private TextMeshProUGUI toggleButtonText;
-    
-    // 初期設定が完了したかを追跡するためのフラグ
-    private bool isInitialSetupComplete = false;
+    private int currentTabIndex = 0;
 
     void Start()
     {
@@ -32,107 +29,172 @@ public class PropertiesPanelController : MonoBehaviour
             toggleButtonRect = toggleButton.GetComponent<RectTransform>();
             toggleButtonText = toggleButton.GetComponentInChildren<TextMeshProUGUI>();
         }
-
-        // 初期状態を「閉じる」に設定
         isPanelOpen = false;
         UpdatePanelAndButtonState();
+        propertiesPanel.SetActive(false);
 
-        // 0番目のタブ（重力）を初期選択状態にする
+        for (int i = 0; i < tabButtons.Length; i++)
+        {
+            int index = i;
+            tabButtons[i].onClick.AddListener(() => SelectTab(index));
+        }
         SelectTab(0);
     }
 
-    // LateUpdateは、すべてのUpdate処理が終わった後に呼ばれます。
-    // UIの初期化が完了した、より確実なタイミングで処理を行うために使います。
-    void LateUpdate()
+    void OnEnable()
     {
-        // この初期設定処理が、一度だけ実行されるように制御します
-        if (!isInitialSetupComplete && propertiesPanel.activeInHierarchy)
+        if (propertiesPanel.activeSelf)
         {
-            SetupSlidersForGravity();
-            isInitialSetupComplete = true; // フラグを立てて、二度と実行されないようにする
+            UpdateSlidersForCurrentTab();
         }
     }
 
     public void SelectTab(int tabIndex)
     {
+        currentTabIndex = tabIndex;
         for (int i = 0; i < underlines.Length; i++)
         {
             if (underlines[i] != null)
             {
-                underlines[i].SetActive(false);
+                underlines[i].SetActive(i == tabIndex);
             }
         }
-
-        if (tabIndex < underlines.Length && underlines[tabIndex] != null)
+        if (isPanelOpen)
         {
-            underlines[tabIndex].SetActive(true);
+            UpdateSlidersForCurrentTab();
         }
-
-        // タブがクリックされたら、スライダーの設定をやり直す
-        if (tabIndex == 0)
-        {
-            SetupSlidersForGravity();
-        }
-        // 今後、ここに温度(tabIndex == 1)などの処理を追加していく
     }
-    
-    void SetupSlidersForGravity()
+
+    private void UpdateSlidersForCurrentTab()
     {
-        if (allPlanets == null || allSliders == null || allPlanets.Length != allSliders.Length || allPlanets.Length == 0)
+        if (allPlanets == null || allSliders == null || allPlanets.Length != allSliders.Length)
         {
-            // データが不十分な場合は、エラーメッセージを出して処理を中断
             Debug.LogError("惑星データ(All Planets)とスライダー(All Sliders)の数が一致しないか、設定されていません。");
             return;
         }
 
-        // スライダーの最大値を太陽の重力に設定（0番目が太陽と仮定）
-        float maxGravity = allPlanets[0].gravity;
+        switch (currentTabIndex)
+        {
+            case 0: SetupSlidersForGravity(); break;
+            case 1: SetupSlidersForTemperature(); break;
+            case 2: SetupSlidersForRotationSpeed(); break;
+            case 3: SetupSlidersForRevolutionSpeed(); break;
+            case 4: SetupSlidersForMass(); break;
+        }
+    }
 
+    void SetupSlidersForGravity()
+    {
+        float minVal = allPlanets.Min(p => p.gravity);
+        float maxVal = allPlanets.Max(p => p.gravity);
+        for (int i = 0; i < allSliders.Length; i++)
+        {
+            // ★★★ この行が重要です ★★★
+            PlanetData targetPlanet = allPlanets[i];
+            SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.gravity,
+                (newValue) => targetPlanet.gravity = newValue);
+        }
+    }
+
+    void SetupSlidersForTemperature()
+    {
+        float minVal = allPlanets.Min(p => p.temperature);
+        float maxVal = allPlanets.Max(p => p.temperature);
+        for (int i = 0; i < allSliders.Length; i++)
+        {
+            // ★★★ この行が重要です ★★★
+            PlanetData targetPlanet = allPlanets[i];
+            SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.temperature,
+                (newValue) => targetPlanet.temperature = newValue);
+        }
+    }
+
+    void SetupSlidersForRotationSpeed()
+    {
+        float minVal = allPlanets.Min(p => p.rotation_speed);
+        float maxVal = allPlanets.Max(p => p.rotation_speed);
+        for (int i = 0; i < allSliders.Length; i++)
+        {
+            // ★★★ この行が重要です ★★★
+            PlanetData targetPlanet = allPlanets[i];
+            SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.rotation_speed,
+                (newValue) => targetPlanet.rotation_speed = newValue);
+        }
+    }
+
+    void SetupSlidersForRevolutionSpeed()
+    {
+        float minVal = 0f;
+        float maxVal = allPlanets.Where(p => p.revolution_speed > 0).Max(p => p.revolution_speed);
+        for (int i = 0; i < allSliders.Length; i++)
+        {
+            // ★★★ この行が重要です ★★★
+            PlanetData targetPlanet = allPlanets[i];
+            SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.revolution_speed,
+                (newValue) => targetPlanet.revolution_speed = newValue);
+        }
+    }
+
+    void SetupSlidersForMass()
+    {
+        double minVal = allPlanets.Where(p => p.mass > 0).Min(p => p.mass);
+        double maxVal = allPlanets.Max(p => p.mass);
         for (int i = 0; i < allSliders.Length; i++)
         {
             Slider slider = allSliders[i];
             PlanetData planet = allPlanets[i];
-            
-            // スライダーが正しく設定されているか確認
             if (slider == null || planet == null) continue;
-
-            // スライダーが動かされた時の処理（リスナー）を一度クリア
             slider.onValueChanged.RemoveAllListeners();
-
-            // スライダーの範囲と初期値を設定
             slider.minValue = 0;
-            slider.maxValue = maxGravity;
-            slider.value = planet.gravity; // min/max設定後にvalueを設定
+            slider.maxValue = 1;
+            if (maxVal > minVal && planet.mass > 0)
+            {
+                double logMin = System.Math.Log10(minVal);
+                double logMax = System.Math.Log10(maxVal);
+                slider.value = (float)((System.Math.Log10(planet.mass) - logMin) / (logMax - logMin));
+            }
 
-            // スライダーが動かされた時に、どの惑星の重力を更新するかを再設定
-            int planetIndex = i; 
-            slider.onValueChanged.AddListener((newValue) => {
-                allPlanets[planetIndex].gravity = newValue;
+            int planetIndex = i;
+            slider.onValueChanged.AddListener((sliderValue) => {
+                double logMin = System.Math.Log10(minVal);
+                double logMax = System.Math.Log10(maxVal);
+                double logVal = logMin + sliderValue * (logMax - logMin);
+                allPlanets[planetIndex].mass = System.Math.Pow(10, logVal);
             });
         }
     }
 
-
+    private void SetupSlider(Slider slider, PlanetData planet, float min, float max, float currentValue, System.Action<float> onValueChanged)
+    {
+        if (slider == null || planet == null) return;
+        slider.onValueChanged.RemoveAllListeners();
+        slider.minValue = min;
+        slider.maxValue = max;
+        slider.value = currentValue;
+        slider.onValueChanged.AddListener(newValue => onValueChanged(newValue));
+    }
 
     public void TogglePanelVisibility()
     {
         isPanelOpen = !isPanelOpen;
+        propertiesPanel.SetActive(isPanelOpen);
+        if (isPanelOpen)
+        {
+            UpdateSlidersForCurrentTab();
+        }
         UpdatePanelAndButtonState();
     }
 
     private void UpdatePanelAndButtonState()
     {
         if (propertiesPanel == null || toggleButtonRect == null || toggleButtonText == null) return;
-
-        propertiesPanel.SetActive(isPanelOpen);
-
         if (isPanelOpen)
         {
             toggleButtonText.text = "▼";
             toggleButtonRect.anchorMin = new Vector2(0.5f, 0.5f);
             toggleButtonRect.anchorMax = new Vector2(0.5f, 0.5f);
             toggleButtonRect.pivot = new Vector2(0.5f, 0.5f);
-            toggleButtonRect.anchoredPosition = new Vector2(85, 100); 
+            toggleButtonRect.anchoredPosition = new Vector2(85, 100);
         }
         else
         {
@@ -144,4 +206,3 @@ public class PropertiesPanelController : MonoBehaviour
         }
     }
 }
-

@@ -14,6 +14,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/godmodescreen.unity
     guid: e2abe2621f4f2f142928ef7f5100ffc5
+  - enabled: 1
+    path: Assets/Scenes/Sun_celestialscreen.unity
+    guid: db7e88dc5ad013c448e444245686f80b
+  - enabled: 1
+    path: Assets/Scenes/Mars_celestialscreen.unity
+    guid: 3853f8902e0d8044bbf3c4e3072323d7
+  - enabled: 1
+    path: Assets/Scenes/Earth_celestialscreen.unity
+    guid: 1d4ba89996b408948ad047cee1e2516e
+  - enabled: 1
+    path: Assets/Scenes/Jupiter_celestialscreen.unity
+    guid: eccb03b981425c943abd6e7c99103c91
+  - enabled: 1
+    path: Assets/Scenes/Mercury_celestialscreen.unity
+    guid: 37777b7060e26e64bbb29b7ff3f2516b
+  - enabled: 1
+    path: Assets/Scenes/Neptune_celestialscreen.unity
+    guid: 944775a7f4cd74e479734dd2ea8ca405
+  - enabled: 1
+    path: Assets/Scenes/Saturn_celestialscreen.unity
+    guid: 74f8c1f640907ed48a8f6eb3ac5d79b0
+  - enabled: 1
+    path: Assets/Scenes/Uranus_celestialscreen.unity
+    guid: 096fb7cbdcb04854ea979edc67e3dcfc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
