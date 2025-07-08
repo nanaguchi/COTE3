@@ -12,7 +12,6 @@ public class TooltipManager : MonoBehaviour
     private Camera mainCamera;
     private Transform targetTransform; // 表示対象（天体）
     private RectTransform panelRectTransform;
-    private TooltipLineRenderer tooltipLine;
 
     void Awake()
     {
@@ -27,44 +26,41 @@ public class TooltipManager : MonoBehaviour
     }
 
     void Update()
-    {
-        if (tooltipPanel.activeSelf && targetTransform != null)
-        {
-            // 天体のワールド座標 → スクリーン座標に変換
-            Vector3 screenPos = mainCamera.WorldToScreenPoint(targetTransform.position);
-
-            // ツールチップを少し上に表示（+Y方向）
-            screenPos.y += 100;
-
-            // UIパネル位置に変換
-            panelRectTransform.position = screenPos;
-        }
-    }
-
-    public void ShowTooltip(PlanetData planetData, Transform target)
 {
-    titleText.text = planetData.planetName;
-    descriptionText.text = planetData.brief_info;
-
-    targetTransform = target;
-    tooltipPanel.SetActive(true);
-
-    tooltipLine = target.GetComponent<TooltipLineRenderer>();
-    if (tooltipLine != null)
+    if (tooltipPanel.activeSelf && targetTransform != null)
     {
-        tooltipLine.SetTooltipTarget(panelRectTransform);
+        Vector3 screenPos = mainCamera.WorldToScreenPoint(targetTransform.position);
+
+        if (screenPos.z < 0f)
+        {
+            tooltipPanel.SetActive(false); // カメラの後ろなら非表示
+            return;
+        }
+
+        // 補正値（見やすく少しずらす）
+        screenPos.y += 100;
+        screenPos.x += 100;
+
+        // 画面サイズ内に制限（Clamp）
+        float clampedX = Mathf.Clamp(screenPos.x, 0, Screen.width - panelRectTransform.rect.width);
+        float clampedY = Mathf.Clamp(screenPos.y, 0, Screen.height - panelRectTransform.rect.height);
+
+        panelRectTransform.position = new Vector3(clampedX, clampedY, 0);
     }
+}
+
+    
+    public void ShowTooltip(string title, string description, Transform target)
+{
+    tooltipPanel.SetActive(true);
+    titleText.text = title;
+    descriptionText.text = description;
+    targetTransform = target;
 }
 
     public void HideTooltip()
 {
     tooltipPanel.SetActive(false);
     targetTransform = null;
-
-    if (tooltipLine != null)
-    {
-        tooltipLine.ClearTooltip();
-        tooltipLine = null;
-    }
 }
 }

@@ -19,7 +19,7 @@ public class PlanetTooltipTrigger : MonoBehaviour
         // TooltipManager�ɁA���g�̏���n���ĕ\�����˗�����
         if (planetData != null)
         {
-            TooltipManager.Instance.ShowTooltip(planetData, this.transform);
+            TooltipManager.Instance.ShowTooltip(planetData.planetName, planetData.brief_info, this.transform);
         }
     }
 
