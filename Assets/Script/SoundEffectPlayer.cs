@@ -1,27 +1,23 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-// AudioSource‚ª•K{‚Å‚ ‚é‚±‚Æ‚ğ¦‚·
-[RequireComponent(typeof(AudioSource))]
-public class SoundEffectPlayer : MonoBehaviour
+public class SoundEffectPlayewr : MonoBehaviour
 {
-    // Inspector‚©‚çÄ¶‚µ‚½‚¢‰¹‚ğİ’è‚·‚é
-    public AudioClip soundToPlay;
-    
-    private AudioSource audioSource;
+    [SerializeField] private Slider bgmSlider;
+    [SerializeField] private AudioSource bgmAudio;
 
-    void Awake()
-    {
-        // ‚±‚ÌƒIƒuƒWƒFƒNƒg‚É•t‚¢‚Ä‚¢‚éAudioSource‚ğæ“¾
-        audioSource = GetComponent<AudioSource>();
-    }
-
-    // ƒQ[ƒ€ŠJn‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
     void Start()
     {
-        // soundToPlay‚ªİ’è‚³‚ê‚Ä‚¢‚ê‚ÎAˆê“x‚¾‚¯Ä¶‚·‚é
-        if (soundToPlay != null)
-        {
-            audioSource.PlayOneShot(soundToPlay);
-        }
+
+        bgmSlider.onValueChanged.AddListener(UpdateBGMVolume);
+
+
+        UpdateBGMVolume(bgmSlider.value);
+    }
+
+    void UpdateBGMVolume(float value)
+    {
+        // éŸ³é‡ã¯0.0ã€œ1.0ã®ç¯„å›²
+        bgmAudio.volume = value;
     }
 }
