@@ -248,6 +248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a392efa1e6eeacf4db2ca69c5a2d58a7, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &77405045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +417,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &77405049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,8 +527,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 2021195987}
   m_HandleRect: {fileID: 690258164}
   m_Direction: 0
-  m_MinValue: -87600
-  m_MaxValue: 87600
+  m_MinValue: -3.652425e+10
+  m_MaxValue: 3.652425e+10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -594,6 +598,7 @@ GameObject:
   - component: {fileID: 84976013}
   - component: {fileID: 84976015}
   - component: {fileID: 84976017}
+  - component: {fileID: 84976018}
   m_Layer: 6
   m_Name: Earth
   m_TagString: Untagged
@@ -704,6 +709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 9312c4016e232454da706ee940c61927, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &84976011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +878,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &84976015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,6 +904,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d1febaed3f9b6419ce5f024b225bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &84976018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84976005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508b4e2ee6d24a54eb179741f3b7063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetData: {fileID: 84976014}
+  freezingPoint: 0
+  deepFreezePoint: -50
+  boilingPoint: 100
+  scorchedPoint: 500
+  lavaPoint: 800
+  iceTintColor: {r: 0.8, g: 0.95, b: 1, a: 1}
+  dryTintColor: {r: 1, g: 0.7, b: 0.5, a: 1}
+  lavaEmissionColor: {r: 1, g: 0.4, b: 0, a: 1}
 --- !u!1 &111222104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 969950798394849004, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
@@ -1569,6 +1599,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d29e587e85de65f40903f7b64fc5f79f, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &569805978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,6 +1645,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &569805980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1763,6 +1797,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 13c9ed55e4f89cc429df7d5fadc1eacc, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &596793704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,6 +1966,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &596793714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,6 +2086,7 @@ GameObject:
   - component: {fileID: 650089234}
   - component: {fileID: 650089236}
   - component: {fileID: 650089238}
+  - component: {fileID: 650089239}
   m_Layer: 6
   m_Name: Mars
   m_TagString: Untagged
@@ -2158,6 +2197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 4296d0e53dae2ae49976a1a0b76993cf, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &650089232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,6 +2365,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 1
+  initialMass: 0
 --- !u!114 &650089236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2348,6 +2391,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d1febaed3f9b6419ce5f024b225bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &650089239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650089226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508b4e2ee6d24a54eb179741f3b7063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetData: {fileID: 650089235}
+  freezingPoint: 0
+  deepFreezePoint: -50
+  boilingPoint: 100
+  scorchedPoint: 500
+  lavaPoint: 800
+  iceTintColor: {r: 0.8, g: 0.95, b: 1, a: 1}
+  dryTintColor: {r: 1, g: 0.7, b: 0.5, a: 1}
+  lavaEmissionColor: {r: 1, g: 0.4, b: 0, a: 1}
 --- !u!1 &673170192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2876,7 @@ GameObject:
   - component: {fileID: 946153854}
   - component: {fileID: 946153856}
   - component: {fileID: 946153858}
+  - component: {fileID: 946153859}
   m_Layer: 6
   m_Name: Mercury
   m_TagString: Untagged
@@ -2922,6 +2987,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 71709e1dcc722b14a99369597850b59e, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &946153852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3088,6 +3156,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 1
+  initialMass: 0
 --- !u!114 &946153856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3113,6 +3182,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d1febaed3f9b6419ce5f024b225bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &946153859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946153846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508b4e2ee6d24a54eb179741f3b7063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetData: {fileID: 946153855}
+  freezingPoint: 0
+  deepFreezePoint: -50
+  boilingPoint: 100
+  scorchedPoint: 500
+  lavaPoint: 800
+  iceTintColor: {r: 0.8, g: 0.95, b: 1, a: 1}
+  dryTintColor: {r: 1, g: 0.7, b: 0.5, a: 1}
+  lavaEmissionColor: {r: 1, g: 0.4, b: 0, a: 1}
 --- !u!1 &969095787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3421,6 +3511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 52da0b04a959a4a49b4552eac92c181a, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1242939210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3587,6 +3680,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &1242939214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3741,6 +3835,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d28632deb8ddad14198e94daf1a80041, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1303853245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,6 +4004,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &1303853249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,6 +4169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a134577a29eb0f84c90cebc1e94e6ada, type: 2}
   orbitCenter: {fileID: 84976009}
+  parentPlanetData: {fileID: 84976014}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 4
 --- !u!114 &1387886064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4114,6 +4215,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &1387886066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4287,6 +4389,7 @@ GameObject:
   - component: {fileID: 1645793796}
   - component: {fileID: 1645793798}
   - component: {fileID: 1645793800}
+  - component: {fileID: 1645793801}
   m_Layer: 6
   m_Name: Venus
   m_TagString: Untagged
@@ -4397,6 +4500,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 6555e1c3203dd29499e796f06c0a7961, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1645793794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4572,6 +4678,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &1645793798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4597,6 +4704,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d1febaed3f9b6419ce5f024b225bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1645793801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645793788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508b4e2ee6d24a54eb179741f3b7063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetData: {fileID: 1645793797}
+  freezingPoint: 0
+  deepFreezePoint: -50
+  boilingPoint: 100
+  scorchedPoint: 500
+  lavaPoint: 800
+  iceTintColor: {r: 0.8, g: 0.95, b: 1, a: 1}
+  dryTintColor: {r: 1, g: 0.7, b: 0.5, a: 1}
+  lavaEmissionColor: {r: 1, g: 0.4, b: 0, a: 1}
 --- !u!1001 &1764028383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4934,8 +5062,32 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33105375179291391, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 33105375179291391, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 33105375179291391, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 109827495165448153, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598506905267720907, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 598506905267720907, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 598506905267720907, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 628897017080091848, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
@@ -4960,6 +5112,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 794758868449465641, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123111436804197255, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 1123111436804197255, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 1123111436804197255, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473409959499293846, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 1473409959499293846, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 1473409959499293846, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522344217183389930, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 1522344217183389930, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 1522344217183389930, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1727982798908343353, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
@@ -4992,6 +5180,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717898652687514568, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931438472134864545, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 2931438472134864545, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 2931438472134864545, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3011792528797272483, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
@@ -5032,7 +5232,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_text
+      value: "\u25B6"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
       value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3333834903004526871, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5100,6 +5312,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4513048589937509265, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522873358960710725, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 4522873358960710725, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 4522873358960710725, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4536419607976778648, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
@@ -5206,6 +5430,18 @@ PrefabInstance:
       propertyPath: 'allSliders.Array.data[8]'
       value: 
       objectReference: {fileID: 1318124996}
+    - target: {fileID: 5147843600054126932, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 5147843600054126932, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 5147843600054126932, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5455365500886965886, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5252,6 +5488,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5880252468192411843, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904891964570773840, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 5904891964570773840, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+    - target: {fileID: 5904891964570773840, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6165353872376965986, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}

@@ -2,19 +2,25 @@ using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
 {
+    [Header("基本設定")]
     public PlanetData planetData;
     public Transform orbitCenter;
 
+    [Header("衛星用の設定 (月にのみ設定)")]
+    public PlanetData parentPlanetData;
+    public float escapeGravityThreshold = 5.0f;
+
+    // ★★★ 1. 離脱速度の倍率を追加 ★★★
+    [Header("離脱設定")]
+    public float escapeSpeedMultiplier = 2.0f; // 離脱速度の倍率 (2.0で2倍速)
+
     private bool isOrbiting = true;
     private Vector3 rogueVelocity;
-    
-    // ★追加：1フレーム前の位置を記憶するための変数
     private Vector3 previousPosition;
 
     void Start()
     {
-        // 起動時の位置を記録
-        if (orbitCenter != null)
+        if (orbitCenter != null || parentPlanetData != null)
         {
             previousPosition = transform.position;
         }
@@ -22,6 +28,14 @@ public class ObjectMove : MonoBehaviour
 
     void Update()
     {
+        if (parentPlanetData != null && isOrbiting)
+        {
+            if (parentPlanetData.gravity < escapeGravityThreshold)
+            {
+                GoRogue();
+            }
+        }
+
         if (isOrbiting)
         {
             if (TimeController.Instance == null) return;
@@ -29,21 +43,27 @@ public class ObjectMove : MonoBehaviour
             float currentTime = TimeController.Instance.simulationTime;
             UpdatePlanetState(currentTime);
 
-            // ★追加：現在の速度を計算するために、毎フレーム位置を記録
-            rogueVelocity = (transform.position - previousPosition) / Time.deltaTime;
-            previousPosition = transform.position;
+            if (Time.deltaTime > 0)
+            {
+                 rogueVelocity = (transform.position - previousPosition) / Time.deltaTime;
+                 previousPosition = transform.position;
+            }
         }
         else
         {
-            // 軌道を離脱したら、保存した最後の速度でまっすぐ進み続ける
-            transform.position += rogueVelocity * Time.deltaTime;
+            // ★★★ 2. 計算した速度に倍率をかける ★★★
+            transform.position += (rogueVelocity * escapeSpeedMultiplier) * Time.deltaTime;
         }
     }
 
+    // ... (UpdatePlanetStateとGoRogueメソッドは変更なし) ...
     void UpdatePlanetState(float time)
     {
-        // (このメソッドの中身に変更はありません)
-        if (planetData == null || orbitCenter == null) return;
+        if (planetData == null) return;
+
+        Transform currentOrbitCenter = (parentPlanetData != null) ? parentPlanetData.transform : orbitCenter;
+        if (currentOrbitCenter == null) return;
+
         if (Mathf.Abs(planetData.revolution_speed) > 0.001f)
         {
             float revolutionDegreesPerHour = 360f / planetData.revolution_speed;
@@ -54,7 +74,7 @@ public class ObjectMove : MonoBehaviour
                 0,
                 Mathf.Sin(radian) * planetData.orebit_radius * 10 
             );
-            transform.position = orbitCenter.position + orbitPos;
+            transform.position = currentOrbitCenter.position + orbitPos;
         }
         if (Mathf.Abs(planetData.rotation_speed) > 0.001f)
         {
@@ -66,12 +86,10 @@ public class ObjectMove : MonoBehaviour
         }
     }
     
-    // ★変更点：このメソッドはシンプルになります
     public void GoRogue()
     {
         if (!isOrbiting) return;
         Debug.Log(gameObject.name + " が軌道を離脱しました。");
         isOrbiting = false;
-        // 速度はUpdateで常に計算されているので、ここではフラグを変えるだけ
     }
 }

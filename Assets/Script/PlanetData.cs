@@ -30,4 +30,5 @@ public class PlanetData : MonoBehaviour
     public GameObject explosionEffectPrefab; // ★追加：爆発エフェクトのプレハブ
 
     public bool isIndestructible = false; // ★この行を追加
+    public double initialMass;
 }

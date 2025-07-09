@@ -1,97 +1,106 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // Listを使うために追加
+using System.Linq;                // Linqを使うために追加
 using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
-    [Header("�V�~�����[�V�����Ώ�")]
+    [Header("シミュレーション対象")]
     public PlanetData[] allPlanets;
     public Light sunLight;
 
-    [Header("���z�̐ݒ�")]
+    [Header("太陽の設定")]
     public Material sunMaterial;
     public Gradient sunColorGradient;
 
-    [Header("�d�̓V�~�����[�V�����ݒ�")]
+    [Header("重力シミュレーション設定")]
     public float collapseGravityThreshold = 500f;
     public float disintegrationGravityThreshold = 0.1f;
     public float disappearDuration = 1.5f;
 
-    // ���ǉ��F���z�����݂��ǂ�����ǐՂ���t���O
+    // ★★★ ここから追加 ★★★
+    private List<PlanetVisualController> visualControllers = new List<PlanetVisualController>();
+    // ★★★ ここまで追加 ★★★
+
     private bool isSunAlive = true;
 
-     public void ResetGameToInitialState()
+    void Start()
+    {
+        // ★★★ ここから追加 ★★★
+        // ゲーム開始時に、すべての視覚コントローラーを見つけてリストに保存する
+        visualControllers = FindObjectsOfType<PlanetVisualController>().ToList();
+        // ★★★ ここまで追加 ★★★
+    }
+
+    public void ResetGameToInitialState()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     void Update()
     {
-        // ���t���[���A�����@���ƌ����ڂ�K�p����
         ApplyPhysicsAndVisuals();
+    }
+    
+    void ApplyPhysicsAndVisuals()
+    {
+        if (isSunAlive) 
+        {
+            UpdateSunVisuals();
+        }
+        UpdateGravityEffects();
 
-        // ���ύX�_�F�����ɂ��������z�̏��ł����m����if���͕s�v�Ȃ̂ō폜���܂�
+        // ★★★ ここから追加 ★★★
+        // 全惑星の見た目を温度に応じて更新する
+        UpdateAllPlanetVisuals();
+        // ★★★ ここまで追加 ★★★
     }
 
-    // ���ǉ��F�f�����O�����������郁�\�b�h
+    // ★★★ ここから追加 ★★★
+    void UpdateAllPlanetVisuals()
+    {
+        foreach (var controller in visualControllers)
+        {
+            if (controller != null)
+            {
+                controller.UpdateVisuals();
+            }
+        }
+    }
+    // ★★★ ここまで追加 ★★★
+
     void ReleasePlanetsFromOrbit()
     {
-        Debug.Log("���z�����ł��܂����I�S�f�����O���𗣒E���܂��B");
-
-        // ���z�ȊO�̑S�Ă̘f�������[�v
+        Debug.Log("太陽が消滅しました！全惑星が軌道を離脱します。");
         for (int i = 1; i < allPlanets.Length; i++)
         {
             if (allPlanets[i] != null)
             {
-                // �f���̋O������X�N���v�g���擾 (���Ȃ��̃X�N���v�g���ɍ��킹�Ă�������)
                 ObjectMove motionScript = allPlanets[i].GetComponent<ObjectMove>();
                 if (motionScript != null)
                 {
-                    // �O�����~�����閽�߂��Ăяo��
                     motionScript.GoRogue();
                 }
             }
         }
     }
 
-    // --- �ȉ��A�����̃��\�b�h�i�ύX�Ȃ��j ---
-
-    void ApplyPhysicsAndVisuals()
-    {
-        if (isSunAlive) // ���z�����݂Ȏ��������s
-        {
-            UpdateSunVisuals();
-        }
-        UpdateGravityEffects();
-        // UpdateAllOrbits(); // �����̍s��ObjectMove���e���s���̂ŕs�v�ɂȂ�܂�
-    }
-    
     void UpdateGravityEffects()
     {
-        // �S�Ă̘f�����`�F�b�N
         foreach (PlanetData planet in allPlanets)
         {
             if (planet == null || !planet.gameObject.activeSelf) continue;
+            if (planet.isIndestructible) continue;
 
-            // ���ǉ��F�����u���G�v�Ƀ`�F�b�N�������Ă�����A���̓V�̂̏��Ŕ�����X�L�b�v����
-            if (planet.isIndestructible)
-            {
-                continue; // ���̓V�̂̃`�F�b�N�Ɉڂ�
-            }
-
-            // --- ��ԕω��̔��� ---
-            
-            // 1. �d�͂��������ĕ��󂷂�ꍇ
             if (planet.gravity > collapseGravityThreshold)
             {
-                TriggerExplosion(planet, "�d�͕���");
+                TriggerExplosion(planet, "重力崩壊");
                 continue;
             }
-
-            // 2. �d�͂��シ���ď��ł���ꍇ
             if (planet.gravity < disintegrationGravityThreshold)
             {
-                TriggerExplosion(planet, "�d�͂ɂ�����");
+                TriggerExplosion(planet, "重力による崩壊");
                 continue;
             }
         }
@@ -99,7 +108,7 @@ public class SimulationManager : MonoBehaviour
 
     void TriggerExplosion(PlanetData planet, string reason)
     {
-        Debug.Log(planet.planetName + " �� " + reason + " ���܂����B");
+        Debug.Log(planet.planetName + " が " + reason + " しました。");
         StartCoroutine(FadeAndDestroy(planet));
     }
 
@@ -108,6 +117,9 @@ public class SimulationManager : MonoBehaviour
         Renderer planetRenderer = planet.GetComponent<Renderer>();
         Vector3 originalScale = planet.transform.localScale;
         float elapsedTime = 0f;
+
+        // 破壊処理中は、他のスクリプトから操作されないようにする
+        planet.isIndestructible = true;
 
         while (elapsedTime < disappearDuration)
         {
@@ -130,30 +142,16 @@ public class SimulationManager : MonoBehaviour
             Instantiate(planet.explosionEffectPrefab, planet.transform.position, Quaternion.identity);
         }
 
-        // ������ �������炪�C������ ������
-        if (planet == allPlanets[0]) // �������ł���̂����z�Ȃ�
+        if (planet == allPlanets[0]) // 消滅したのが太陽なら
         {
-            // �����ڂƌ�������
+            isSunAlive = false;
             if(planetRenderer != null) planetRenderer.enabled = false;
             if(sunLight != null) sunLight.enabled = false;
-            
-            // ���d�v�F�����ŁA���̘f���ɋO���𗣒E����悤���߂���
             ReleasePlanetsFromOrbit();
         }
         else
         {
-            // ���z�ȊO�̓V�̂Ȃ�A�I�u�W�F�N�g���Ɣ�\���ɂ���
             planet.gameObject.SetActive(false);
-        }
-        
-        // ������ �����܂ł��C������ ������
-
-        planet.transform.localScale = originalScale;
-        if(planetRenderer != null && planetRenderer.material.HasProperty("_Color"))
-        {
-            Color originalColor = planetRenderer.material.color;
-            originalColor.a = 1f;
-            planetRenderer.material.color = originalColor;
         }
     }
     
@@ -170,9 +168,4 @@ public class SimulationManager : MonoBehaviour
         sunLight.color = Color.Lerp(Color.white, newSunColor, 0.25f);
         sunLight.intensity = 2f * intensityRatio;
     }
-
-    
-
-    // ���̃��\�b�h�͊e�f�����ʂɍs���悤�ɂȂ����̂ŁA��ɂ��邩�폜���܂�
-    void UpdateAllOrbits() {}
 }
