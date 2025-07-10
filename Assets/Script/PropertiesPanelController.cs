@@ -194,7 +194,7 @@ public class PropertiesPanelController : MonoBehaviour
             toggleButtonRect.anchorMin = new Vector2(0.5f, 0.5f);
             toggleButtonRect.anchorMax = new Vector2(0.5f, 0.5f);
             toggleButtonRect.pivot = new Vector2(0.5f, 0.5f);
-            toggleButtonRect.anchoredPosition = new Vector2(85, 100);
+            toggleButtonRect.anchoredPosition = new Vector2(243, 180);
         }
         else
         {
@@ -202,7 +202,7 @@ public class PropertiesPanelController : MonoBehaviour
             toggleButtonRect.anchorMin = new Vector2(1f, 0.5f);
             toggleButtonRect.anchorMax = new Vector2(1f, 0.5f);
             toggleButtonRect.pivot = new Vector2(1f, 0.5f);
-            toggleButtonRect.anchoredPosition = new Vector2(0, 100);
+            toggleButtonRect.anchoredPosition = new Vector2(0, 180);
         }
     }
 }
