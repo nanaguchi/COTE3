@@ -6,6 +6,9 @@ public class TimeController : MonoBehaviour
     // このクラスの唯一のインスタンス (シングルトン)
     public static TimeController Instance { get; private set; }
 
+    [Range(0f, 1000f)]
+    public float timeMultiplier = 1.0f;
+
     [Header("UI設定")]
     [Tooltip("時間制御用のスライダーをここに設定")]
     public Slider timeSlider;
