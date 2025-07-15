@@ -14,6 +14,10 @@ public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名
 
     void Start()
     {
+        
+        Debug.Log("初期BGM音量: " + bgmAudio.volume);
+        Debug.Log("初期SE音量: " + seAudio.volume);
+
         // BGMスライダーのイベントリスナー設定
         if (bgmSlider != null && bgmAudio != null)
         {
@@ -37,7 +41,7 @@ public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名
         }
     }
 
-    void UpdateBGMVolume(float value)
+    public void UpdateBGMVolume(float value)
     {
         if (bgmAudio != null)
         {
@@ -45,7 +49,7 @@ public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名
         }
     }
 
-    void UpdateSEVolume(float value)
+    public void UpdateSEVolume(float value)
     {
         if (seAudio != null)
         {
