@@ -423,6 +423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a392efa1e6eeacf4db2ca69c5a2d58a7, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &77405045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +591,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &84976005
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +719,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 9312c4016e232454da706ee940c61927, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &84976011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,6 +887,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &254597383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1165,7 @@ Transform:
   m_GameObject: {fileID: 442559755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 826.21875, y: -203.96875, z: 0}
+  m_LocalPosition: {x: 930, y: -260, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1680,6 +1688,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d29e587e85de65f40903f7b64fc5f79f, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &569805978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,6 +1734,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &596793699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
@@ -1742,6 +1754,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 13c9ed55e4f89cc429df7d5fadc1eacc, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &596793704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,6 +1922,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &598602394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 4296d0e53dae2ae49976a1a0b76993cf, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &650089232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2376,6 +2395,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &744298318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,6 +2599,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 71709e1dcc722b14a99369597850b59e, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &946153852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,6 +2767,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!114 &946153856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,8 +2780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c06d364a2be8db4cb23c0f6eedbfecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playbackSpeed: 24
-  simulationTime: 0
 --- !u!1 &1012240369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,11 +2814,11 @@ RectTransform:
   - {fileID: 442559757}
   m_Father: {fileID: 613354730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -300, y: 150}
-  m_SizeDelta: {x: -600, y: -300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 150}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1012240371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2869,7 +2891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54, y: 3}
+  m_AnchoredPosition: {x: 37, y: 3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019998937
@@ -2894,8 +2916,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u9695\u77F3\u30B5\u30A4\u30BA"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
-  m_sharedMaterial: {fileID: 1846206275066145075, guid: 3a2a8b232c7c59542a42ce2309659609, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70933c0cf8fb58c46a9ffc36c77323c0, type: 2}
+  m_sharedMaterial: {fileID: -6072967787307498849, guid: 70933c0cf8fb58c46a9ffc36c77323c0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3219,6 +3241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 52da0b04a959a4a49b4552eac92c181a, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1242939210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3384,6 +3409,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &1259296971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,6 +3710,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d28632deb8ddad14198e94daf1a80041, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1303853245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3849,6 +3878,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &1387886058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,6 +4004,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a134577a29eb0f84c90cebc1e94e6ada, type: 2}
   orbitCenter: {fileID: 84976009}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1387886064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4017,6 +4050,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1 &1645793788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 6555e1c3203dd29499e796f06c0a7961, type: 2}
   orbitCenter: {fileID: 569805976}
+  parentPlanetData: {fileID: 0}
+  escapeGravityThreshold: 5
+  escapeSpeedMultiplier: 2
 --- !u!114 &1645793794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4318,6 +4355,7 @@ MonoBehaviour:
   initialgravity: 0
   explosionEffectPrefab: {fileID: 0}
   isIndestructible: 0
+  initialMass: 0
 --- !u!1001 &1764028383
 PrefabInstance:
   m_ObjectHideFlags: 0
