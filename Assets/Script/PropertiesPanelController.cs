@@ -190,7 +190,7 @@ public class PropertiesPanelController : MonoBehaviour
         if (propertiesPanel == null || toggleButtonRect == null || toggleButtonText == null) return;
         if (isPanelOpen)
         {
-            toggleButtonText.text = "▼";
+            toggleButtonText.text = "▶";
             toggleButtonRect.anchorMin = new Vector2(0.5f, 0.5f);
             toggleButtonRect.anchorMax = new Vector2(0.5f, 0.5f);
             toggleButtonRect.pivot = new Vector2(0.5f, 0.5f);
@@ -198,7 +198,7 @@ public class PropertiesPanelController : MonoBehaviour
         }
         else
         {
-            toggleButtonText.text = "◄";
+            toggleButtonText.text = "◀";
             toggleButtonRect.anchorMin = new Vector2(1f, 0.5f);
             toggleButtonRect.anchorMax = new Vector2(1f, 0.5f);
             toggleButtonRect.pivot = new Vector2(1f, 0.5f);

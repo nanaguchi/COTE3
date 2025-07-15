@@ -584,8 +584,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 2021195987}
   m_HandleRect: {fileID: 690258164}
   m_Direction: 0
-  m_MinValue: -3.652425e+10
-  m_MaxValue: 3.652425e+10
+  m_MinValue: -2000000
+  m_MaxValue: 2000000
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2927,7 +2927,7 @@ GameObject:
   - component: {fileID: 772665049}
   - component: {fileID: 772665048}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TimeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6385,11 +6385,11 @@ PrefabInstance:
     - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 6996b7c188d76ec4a91e6ab35f994308, type: 2}
+      objectReference: {fileID: 11400000, guid: 50906ed29de3e294981c2573e6c44c46, type: 2}
     - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 7417639288465735994, guid: 6996b7c188d76ec4a91e6ab35f994308, type: 2}
+      objectReference: {fileID: -1086595365537547128, guid: 50906ed29de3e294981c2573e6c44c46, type: 2}
     - target: {fileID: 3309049489800633220, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -6596,7 +6596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4930101920198624161, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5017483335145084374, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
       propertyPath: allPlanets.Array.size
