@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Sun_celestialscreen.unity
     guid: db7e88dc5ad013c448e444245686f80b
   - enabled: 1
+    path: Assets/Scenes/Venus_celestialscreen.unity
+    guid: 7b6a8a8c74fc9f94aa2fc06788f06131
+  - enabled: 1
     path: Assets/Scenes/Mars_celestialscreen.unity
     guid: 3853f8902e0d8044bbf3c4e3072323d7
   - enabled: 1

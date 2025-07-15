@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SEPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3256641791615543076, guid: e4bc0c68e26d7924e93cf5552dc898dd, type: 3}
+      propertyPath: m_Pitch
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6238992050797305525, guid: e4bc0c68e26d7924e93cf5552dc898dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 579
@@ -1709,6 +1713,7 @@ GameObject:
   - component: {fileID: 569805980}
   - component: {fileID: 569805981}
   - component: {fileID: 569805983}
+  - component: {fileID: 569805984}
   m_Layer: 6
   m_Name: Sun
   m_TagString: Untagged
@@ -1998,6 +2003,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d1febaed3f9b6419ce5f024b225bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &569805984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569805972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac9214b3674eb642bf136df4df5627a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fragmentPrefab: {fileID: 0}
+  fragmentCount: 30
+  explosionForce: 500
+  explosionRadius: 5
+  planetData: {fileID: 0}
 --- !u!114 &573991547 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3333018419399571115, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
