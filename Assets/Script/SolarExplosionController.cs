@@ -16,8 +16,9 @@ public class SolarExplosionController : MonoBehaviour
     void Update()
     {
         // 重力が0以下で、まだ爆発していなければ爆発する
-        if (!hasExploded && planetData.gravity <= 0f)
+        if (!hasExploded && planetData.gravity <= 3.7f)
         {
+            Debug.Log("重力0になったので爆発を実行");
             Explode();
             hasExploded = true;
         }
@@ -33,10 +34,23 @@ public class SolarExplosionController : MonoBehaviour
 
             Rigidbody rb = fragment.GetComponent<Rigidbody>();
             if (rb != null)
-            {
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            }
+        {
+            // 爆発力を与える
+            rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+
+            // ランダムに回転させる（演出強化）
+            rb.AddTorque(Random.onUnitSphere * 50f);
+
+            // デバッグログ（確認用）
+            Debug.Log($"破片 {i} に爆発力とトルクを加えました");
         }
+        else
+        {
+            // Rigidbodyがない場合の警告
+            Debug.LogWarning($"破片 {i} に Rigidbody が見つかりません！");
+        }
+    }
+        
 
         // 元の太陽を削除（または非表示にしたい場合は SetActive(false) に変更）
         Destroy(gameObject);
