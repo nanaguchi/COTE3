@@ -1726,6 +1726,7 @@ GameObject:
   - component: {fileID: 569805983}
   - component: {fileID: 569805984}
   - component: {fileID: 569805985}
+  - component: {fileID: 569805986}
   m_Layer: 6
   m_Name: Sun
   m_TagString: Untagged
@@ -2043,6 +2044,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
+--- !u!114 &569805986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569805972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca328ea0ceabe8b4583ea2b45994da03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetData: {fileID: 569805979}
+  targetGravity: 3.7
+  maxScale: {x: 50, y: 50, z: 50}
 --- !u!114 &573991547 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3333018419399571115, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}

@@ -7,7 +7,7 @@ public class ObjectMove : MonoBehaviour
     public Transform orbitCenter;
 
     [Header("離脱設定")]
-    public float escapeSpeedMultiplier = 2.0f;
+    public float escapeSpeedMultiplier = 0.1f;
 
     // --- 状態管理のための変数 ---
     private bool isOrbiting = true;
