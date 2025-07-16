@@ -324,8 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a392efa1e6eeacf4db2ca69c5a2d58a7, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &77405045
 MonoBehaviour:
@@ -785,8 +783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 9312c4016e232454da706ee940c61927, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &84976011
 MonoBehaviour:
@@ -1840,8 +1836,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d29e587e85de65f40903f7b64fc5f79f, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &569805978
 MonoBehaviour:
@@ -2079,8 +2073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 13c9ed55e4f89cc429df7d5fadc1eacc, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &596793704
 MonoBehaviour:
@@ -2581,8 +2573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 4296d0e53dae2ae49976a1a0b76993cf, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &650089232
 MonoBehaviour:
@@ -3287,8 +3277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 71709e1dcc722b14a99369597850b59e, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &946153852
 MonoBehaviour:
@@ -3969,8 +3957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 52da0b04a959a4a49b4552eac92c181a, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &1242939210
 MonoBehaviour:
@@ -4320,8 +4306,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: d28632deb8ddad14198e94daf1a80041, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &1303853245
 MonoBehaviour:
@@ -4688,8 +4672,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: a134577a29eb0f84c90cebc1e94e6ada, type: 2}
   orbitCenter: {fileID: 84976009}
-  parentPlanetData: {fileID: 84976014}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 4
 --- !u!114 &1387886064
 MonoBehaviour:
@@ -5502,8 +5484,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetData: {fileID: 11400000, guid: 6555e1c3203dd29499e796f06c0a7961, type: 2}
   orbitCenter: {fileID: 569805976}
-  parentPlanetData: {fileID: 0}
-  escapeGravityThreshold: 5
   escapeSpeedMultiplier: 2
 --- !u!114 &1645793794
 MonoBehaviour:

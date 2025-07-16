@@ -3,7 +3,7 @@ using UnityEngine;
 public class SolarExplosionController : MonoBehaviour
 {
     [Header("破片設定")]
-    public GameObject fragmentPrefab; // 破片のプレハブ
+    public GameObject fragmentPrefab;
     public int fragmentCount = 30;
     public float explosionForce = 500f;
     public float explosionRadius = 5f;
@@ -11,21 +11,25 @@ public class SolarExplosionController : MonoBehaviour
     [Header("参照設定")]
     public PlanetData planetData; // 太陽のPlanetData
 
-    private bool hasExploded = false;
+    private bool hasTriggered = false; // イベントを一度だけ発行するためのフラグ
 
     void Update()
     {
-        // 重力が0以下で、まだ爆発していなければ爆発する
-        if (!hasExploded && planetData.gravity <= 3.7f)
+        // まだイベントを発行しておらず、重力が3.7以下になったら
+        if (!hasTriggered && planetData != null && planetData.gravity <= 3.7f)
         {
-            Debug.Log("重力0になったので爆発を実行");
+            hasTriggered = true; // フラグを立てて二度と実行しないようにする
+
+            // ★★★ 変更点: シンプルなイベント発行を呼び出す ★★★
+            SunEventManager.TriggerSunGravityCollapse();
+            
             Explode();
-            hasExploded = true;
         }
     }
 
     void Explode()
     {
+        // ... (この中身は変更なし) ...
         for (int i = 0; i < fragmentCount; i++)
         {
             Vector3 spawnPos = transform.position + Random.insideUnitSphere * 1.5f;
@@ -34,25 +38,12 @@ public class SolarExplosionController : MonoBehaviour
 
             Rigidbody rb = fragment.GetComponent<Rigidbody>();
             if (rb != null)
-        {
-            // 爆発力を与える
-            rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-
-            // ランダムに回転させる（演出強化）
-            rb.AddTorque(Random.onUnitSphere * 50f);
-
-            // デバッグログ（確認用）
-            Debug.Log($"破片 {i} に爆発力とトルクを加えました");
+            {
+                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                rb.AddTorque(Random.onUnitSphere * 50f);
+            }
         }
-        else
-        {
-            // Rigidbodyがない場合の警告
-            Debug.LogWarning($"破片 {i} に Rigidbody が見つかりません！");
-        }
-    }
         
-
-        // 元の太陽を削除（または非表示にしたい場合は SetActive(false) に変更）
         Destroy(gameObject);
     }
 }
