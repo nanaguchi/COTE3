@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 84976015}
   - component: {fileID: 84976017}
   - component: {fileID: 84976018}
+  - component: {fileID: 84976019}
   m_Layer: 6
   m_Name: Earth
   m_TagString: Untagged
@@ -994,9 +995,22 @@ MonoBehaviour:
   boilingPoint: 100
   scorchedPoint: 500
   lavaPoint: 800
-  iceTintColor: {r: 0.8, g: 0.95, b: 1, a: 1}
-  dryTintColor: {r: 1, g: 0.7, b: 0.5, a: 1}
-  lavaEmissionColor: {r: 1, g: 0.4, b: 0, a: 1}
+  iceTintColor: {r: 0.29693845, g: 0.34911105, b: 0.3584906, a: 0.7882353}
+  dryTintColor: {r: 0.8867924, g: 0.76256907, b: 0.4534353, a: 0.70980394}
+  lavaEmissionColor: {r: 0.7433963, g: 0.20618726, b: 0.20618726, a: 0.6431373}
+--- !u!114 &84976019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84976005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f5c9a734351b644a3bd8c138195f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
 --- !u!1 &111222104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 969950798394849004, guid: b8f0f955a2f4849488ff2d04d9c2bfdc, type: 3}
