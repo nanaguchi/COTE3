@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Uranus_celestialscreen.unity
     guid: 096fb7cbdcb04854ea979edc67e3dcfc
+  - enabled: 1
+    path: Assets/Scenes/mars.unity
+    guid: 566fcdfd8035c8c4c80a3125d0457610
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -9,18 +9,15 @@ public class SolarExplosionController : MonoBehaviour
     public float explosionRadius = 5f;
 
     [Header("参照設定")]
-    public PlanetData planetData; // 太陽のPlanetData
-
-    private bool hasTriggered = false; // イベントを一度だけ発行するためのフラグ
+    public PlanetData planetData; 
+    private bool hasTriggered = false; 
 
     void Update()
     {
-        // まだイベントを発行しておらず、重力が3.7以下になったら
+        // 重力が3.7以下
         if (!hasTriggered && planetData != null && planetData.gravity <= 3.7f)
         {
-            hasTriggered = true; // フラグを立てて二度と実行しないようにする
-
-            // ★★★ 変更点: シンプルなイベント発行を呼び出す ★★★
+            hasTriggered = true; 
             SunEventManager.TriggerSunGravityCollapse();
             
             Explode();
@@ -29,7 +26,6 @@ public class SolarExplosionController : MonoBehaviour
 
     void Explode()
     {
-        // ... (この中身は変更なし) ...
         for (int i = 0; i < fragmentCount; i++)
         {
             Vector3 spawnPos = transform.position + Random.insideUnitSphere * 1.5f;

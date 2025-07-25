@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// MonoBehaviourを継承しているので、[CreateAssetMenu]属性は不要です。削除しました。
 public class PlanetData : MonoBehaviour
 {
     [Header("基本情報")]
@@ -12,11 +11,11 @@ public class PlanetData : MonoBehaviour
     public string detailSceneName;  // 詳細シーン名
 
     [Header("物理パラメータ")]
-    public double mass;             // 質量 (kg) - 値が大きいためdouble型
+    public double mass;             // 質量 (kg) 
     public float radius;            // 半径 (km)
-    public float rotation_speed;    // 自転周期 (時間単位)
-    public float revolution_speed;  // 公転周期 (日単位)
-    public float orebit_radius;     // 軌道半径 (原文ママ)
+    public float rotation_speed;    // 自転周期 
+    public float revolution_speed;  // 公転周期 
+    public float orebit_radius;     // 軌道半径 
     public float gravity;           // 表面重力 (m/s^2)
     public float temperature;       // 平均表面温度 (°C)
 
@@ -26,9 +25,9 @@ public class PlanetData : MonoBehaviour
     public float initial_position_z;
     public float scale;
     public float angle;
-    public float initialgravity; // ★追加：初期の重力値
-    public GameObject explosionEffectPrefab; // ★追加：爆発エフェクトのプレハブ
+    public float initialgravity; 
+    public GameObject explosionEffectPrefab; //爆発エフェクト
 
-    public bool isIndestructible = false; // ★この行を追加
+    public bool isIndestructible = false; 
     public double initialMass;
 }

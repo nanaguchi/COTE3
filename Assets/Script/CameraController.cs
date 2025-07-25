@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     [Tooltip("巨大な天体の半径に対する、フォーカス距離の倍率")]
     public float largeObjectDistanceMultiplier = 1.8f;
     [Tooltip("「SaturnFocus」タグが付いた天体専用の、フォーカス距離の倍率")]
-    public float saturnDistanceMultiplier = 1.5f; // ★追加：土星専用の倍率
+    public float saturnDistanceMultiplier = 1.5f;
     [Tooltip("フォーカスが切り替わる際の、カメラが目標に近づく速度")]
     public float focusChangeSpeed = 5f;
     [Tooltip("フォーカス時の周回回転の速度")]
@@ -29,8 +29,6 @@ public class CameraController : MonoBehaviour
     public Vector2 focusDistanceMinMax = new Vector2(5f, 5000f);
     [Tooltip("フォーカス解除時に、少し後ろに下がる距離")]
     public float defocusKickback = 20f;
-    
-    // (Start, Update, LateUpdateなどの他のメソッドに変更はありません)
     
     private Transform focusTarget;
     private Vector3 focusPoint;
@@ -137,28 +135,20 @@ public class CameraController : MonoBehaviour
             focusPoint = newTarget.position;
         }
         
-        // ★★★ ここからが、今回の修正の核心部分です ★★★
         float desiredDistance;
-        
-        // 1. まず、特別な「SaturnFocus」タグが付いているかチェック
+  
         if (newTarget.CompareTag("SaturnFocus"))
         {
-            // 【土星の場合】
             desiredDistance = targetRadius * saturnDistanceMultiplier;
         }
-        // 2. 次に、巨大な天体かどうかをチェック
         else if (targetRadius > largeObjectThreshold)
         {
-            // 【土星以外の巨大な天体の場合】
             desiredDistance = targetRadius * largeObjectDistanceMultiplier;
         }
-        // 3. それ以外
         else
         {
-            // 【通常の天体の場合】
             desiredDistance = targetRadius * defaultDistanceMultiplier;
         }
-        // ★★★ ここまで ★★★
         
         focusDistance = Mathf.Clamp(desiredDistance, focusDistanceMinMax.x, focusDistanceMinMax.y);
         

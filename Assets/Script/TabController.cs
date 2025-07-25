@@ -1,17 +1,11 @@
-// 変更前
-// using UnityEngine.UI;
-// public List<Text> tabs;
 
-// 変更後
 using UnityEngine;
-// using UnityEngine.UI; // ←これはもう不要かもしれません
-using TMPro; // ← これを追加！
+using TMPro;
 using System.Collections.Generic;
 
 public class TabController : MonoBehaviour
 {
-    // public List<Text> tabs; // ← この行をコメントアウトするか削除
-    public List<TextMeshProUGUI> tabs; // ← この行に変更！
+    public List<TextMeshProUGUI> tabs; 
 
     public Color selectedColor = Color.white;
     public Color defaultColor = Color.gray;

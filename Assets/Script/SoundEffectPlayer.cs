@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名と一致していることを確認
+public class SoundEffectPlayer : MonoBehaviour 
 {
-    [SerializeField] private Slider bgmSlider;    // BGM用スライダー
-    [SerializeField] private AudioSource bgmAudio; // BGMのAudioSource
+    [SerializeField] private Slider bgmSlider;  
+    [SerializeField] private AudioSource bgmAudio; 
 
-    [SerializeField] private Slider seSlider;     // SE用スライダー
-    [SerializeField] private AudioSource seAudio;  // SEのAudioSource
+    [SerializeField] private Slider seSlider;    
+    [SerializeField] private AudioSource seAudio;  
 
     // クリック音用のAudioClipを追加
-    [SerializeField] private AudioClip clickSound; // リセットボタンのクリック音など
+    [SerializeField] private AudioClip clickSound; 
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名
         Debug.Log("初期BGM音量: " + bgmAudio.volume);
         Debug.Log("初期SE音量: " + seAudio.volume);
 
-        // BGMスライダーのイベントリスナー設定
+        // BGMスライダー
         if (bgmSlider != null && bgmAudio != null)
         {
             bgmSlider.onValueChanged.AddListener(UpdateBGMVolume);
@@ -29,7 +29,7 @@ public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名
             Debug.LogWarning("BGM Slider or AudioSource not assigned for BGM in SoundEffectPlayer.", this);
         }
 
-        // SEスライダーのイベントリスナー設定
+        // SEスライダー
         if (seSlider != null && seAudio != null)
         {
             seSlider.onValueChanged.AddListener(UpdateSEVolume);
@@ -57,12 +57,11 @@ public class SoundEffectPlayer : MonoBehaviour // クラス名がファイル名
         }
     }
 
-    // SEを再生するパブリックメソッド (追加)
     public void PlayClickSE()
     {
         if (seAudio != null && clickSound != null)
         {
-            seAudio.PlayOneShot(clickSound); // SEを一度だけ再生
+            seAudio.PlayOneShot(clickSound); 
         }
         else
         {

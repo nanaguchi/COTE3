@@ -10,7 +10,7 @@ public class TooltipManager : MonoBehaviour
     public TextMeshProUGUI descriptionText;
 
     private Camera mainCamera;
-    private Transform targetTransform; // 表示対象（天体）
+    private Transform targetTransform;
     private RectTransform panelRectTransform;
 
     void Awake()
@@ -33,15 +33,13 @@ public class TooltipManager : MonoBehaviour
 
         if (screenPos.z < 0f)
         {
-            tooltipPanel.SetActive(false); // カメラの後ろなら非表示
+            tooltipPanel.SetActive(false); 
             return;
         }
 
-        // 補正値（見やすく少しずらす）
         screenPos.y += 100;
         screenPos.x += 100;
 
-        // 画面サイズ内に制限（Clamp）
         float clampedX = Mathf.Clamp(screenPos.x, 0, Screen.width - panelRectTransform.rect.width);
         float clampedY = Mathf.Clamp(screenPos.y, 0, Screen.height - panelRectTransform.rect.height);
 

@@ -12,7 +12,7 @@ public class CelestialBody : MonoBehaviour
             TooltipManager.Instance.ShowTooltip(
                 planetData.planetName,       // タイトル
                 planetData.brief_info,       // 説明
-                this.transform               // 自分のTransform
+                this.transform              
             );
         }
     }

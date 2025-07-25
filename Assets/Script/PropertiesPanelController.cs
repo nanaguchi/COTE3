@@ -89,7 +89,7 @@ public class PropertiesPanelController : MonoBehaviour
         float maxVal = allPlanets.Max(p => p.gravity);
         for (int i = 0; i < allSliders.Length; i++)
         {
-            // ★★★ この行が重要です ★★★
+            
             PlanetData targetPlanet = allPlanets[i];
             SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.gravity,
                 (newValue) => targetPlanet.gravity = newValue);
@@ -102,7 +102,6 @@ public class PropertiesPanelController : MonoBehaviour
         float maxVal = allPlanets.Max(p => p.temperature);
         for (int i = 0; i < allSliders.Length; i++)
         {
-            // ★★★ この行が重要です ★★★
             PlanetData targetPlanet = allPlanets[i];
             SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.temperature,
                 (newValue) => targetPlanet.temperature = newValue);
@@ -115,7 +114,6 @@ public class PropertiesPanelController : MonoBehaviour
         float maxVal = allPlanets.Max(p => p.rotation_speed);
         for (int i = 0; i < allSliders.Length; i++)
         {
-            // ★★★ この行が重要です ★★★
             PlanetData targetPlanet = allPlanets[i];
             SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.rotation_speed,
                 (newValue) => targetPlanet.rotation_speed = newValue);
@@ -128,7 +126,6 @@ public class PropertiesPanelController : MonoBehaviour
         float maxVal = allPlanets.Where(p => p.revolution_speed > 0).Max(p => p.revolution_speed);
         for (int i = 0; i < allSliders.Length; i++)
         {
-            // ★★★ この行が重要です ★★★
             PlanetData targetPlanet = allPlanets[i];
             SetupSlider(allSliders[i], targetPlanet, minVal, maxVal, targetPlanet.revolution_speed,
                 (newValue) => targetPlanet.revolution_speed = newValue);

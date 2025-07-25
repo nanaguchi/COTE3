@@ -8,25 +8,19 @@ public class ObjectMove : MonoBehaviour
 
     [Header("離脱設定")]
     public float escapeSpeedMultiplier = 0.1f;
-
-    // --- 状態管理のための変数 ---
     private bool isOrbiting = true;
     private Vector3 previousPosition; // 速度計算用
-
-    // --- 離脱後に使用する変数 ---
     private float escapeTime;
     private Vector3 escapePosition;
     private Vector3 escapeVelocity;
 
     void OnEnable()
     {
-        // 太陽の重力崩壊イベントにGoRogueメソッドを登録
         SunEventManager.OnSunGravityCollapse += GoRogue;
     }
 
     void OnDisable()
     {
-        // オブジェクトが破棄される際などに、登録したメソッドを解除
         SunEventManager.OnSunGravityCollapse -= GoRogue;
     }
 
@@ -45,45 +39,32 @@ public class ObjectMove : MonoBehaviour
 
         if (isOrbiting)
         {
-            // --- 1. 軌道運動中 ---
             UpdatePlanetState(currentTime);
 
-            // 離脱の瞬間の速度を計算するために、常に位置を記録し続ける
             if (Time.deltaTime > 0)
             {
-                // ここで計算される速度が、離脱時の初速となる
                 escapeVelocity = (transform.position - previousPosition) / Time.deltaTime;
                 previousPosition = transform.position;
             }
         }
         else
         {
-            // --- 2. 軌道離脱後 ---
-            // 離脱してからの経過時間を計算
             float timeSinceEscape = currentTime - escapeTime;
-            
-            // 「離脱時の位置」＋「速度 × 経過時間」で現在の位置を算出
+
             transform.position = escapePosition + (escapeVelocity * escapeSpeedMultiplier * timeSinceEscape);
         }
     }
 
-    /// <summary>
-    /// 軌道を離脱する処理。イベントから一度だけ呼ばれる。
-    /// </summary>
     public void GoRogue()
     {
-        if (!isOrbiting) return; // 既に離脱済みの場合は何もしない
+        if (!isOrbiting) return;
 
         Debug.Log(gameObject.name + " が軌道を離脱しました。");
         isOrbiting = false;
-
-        // ★★★ 離脱した瞬間の状態を記録 ★★★
         escapeTime = TimeController.Instance.simulationTime;
         escapePosition = transform.position;
-        // escapeVelocity はUpdateで常に計算されている最新の値を使用する
     }
 
-    // ... UpdatePlanetStateと、その中で使う回転処理などは変更不要です ...
     void UpdatePlanetState(float time)
     {
         if (planetData == null) return;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // Listを使うために追加
-using System.Linq;                // Linqを使うために追加
+using System.Collections.Generic;
+using System.Linq;               
 using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
@@ -19,18 +19,13 @@ public class SimulationManager : MonoBehaviour
     public float disintegrationGravityThreshold = 0.1f;
     public float disappearDuration = 1.5f;
 
-    // ★★★ ここから追加 ★★★
     private List<PlanetVisualController> visualControllers = new List<PlanetVisualController>();
-    // ★★★ ここまで追加 ★★★
 
     private bool isSunAlive = true;
 
     void Start()
     {
-        // ★★★ ここから追加 ★★★
-        // ゲーム開始時に、すべての視覚コントローラーを見つけてリストに保存する
         visualControllers = FindObjectsOfType<PlanetVisualController>().ToList();
-        // ★★★ ここまで追加 ★★★
     }
 
     public void ResetGameToInitialState()
@@ -50,14 +45,10 @@ public class SimulationManager : MonoBehaviour
             UpdateSunVisuals();
         }
         UpdateGravityEffects();
-
-        // ★★★ ここから追加 ★★★
-        // 全惑星の見た目を温度に応じて更新する
         UpdateAllPlanetVisuals();
-        // ★★★ ここまで追加 ★★★
+  
     }
 
-    // ★★★ ここから追加 ★★★
     void UpdateAllPlanetVisuals()
     {
         foreach (var controller in visualControllers)
@@ -68,7 +59,6 @@ public class SimulationManager : MonoBehaviour
             }
         }
     }
-    // ★★★ ここまで追加 ★★★
 
     void ReleasePlanetsFromOrbit()
     {
@@ -118,7 +108,6 @@ public class SimulationManager : MonoBehaviour
         Vector3 originalScale = planet.transform.localScale;
         float elapsedTime = 0f;
 
-        // 破壊処理中は、他のスクリプトから操作されないようにする
         planet.isIndestructible = true;
 
         while (elapsedTime < disappearDuration)
@@ -142,7 +131,7 @@ public class SimulationManager : MonoBehaviour
             Instantiate(planet.explosionEffectPrefab, planet.transform.position, Quaternion.identity);
         }
 
-        if (planet == allPlanets[0]) // 消滅したのが太陽なら
+        if (planet == allPlanets[0]) 
         {
             isSunAlive = false;
             if(planetRenderer != null) planetRenderer.enabled = false;
